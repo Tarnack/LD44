@@ -8,7 +8,8 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
 
-   
+
+
 
     // Update is called once per frame
 
@@ -19,6 +20,10 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDown()
     {
+       // Transform parent = GameObject.FindGameObjectWithTag("Parent").transform;
+        //GameObject gObject = Instantiate(go, Input.mousePosition, Quaternion.identity, parent);
+
+
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
         mOffset = gameObject.transform.position - GetMouseWorldPos();

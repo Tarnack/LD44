@@ -5,25 +5,33 @@ using UnityEngine;
 public class ItemDrop : MonoBehaviour
 {
     public Item item;
-    private bool wasPickedUp;
+    private bool wasDropped;
 
     private void Update()
     {
-        if (wasPickedUp)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (!gameObject.GetComponent<DragAndDrop>().isSelected)
         {
-            Debug.Log("zbub");
-            wasPickedUp = Inventory.instance.Add(item);
+            DropItem(); 
         }
        
     }
+
+    void DropItem()
+    {
+        Debug.Log("zbub");
+        wasDropped = Inventory.instance.Add(item);
+
+        if (wasDropped)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     
     
