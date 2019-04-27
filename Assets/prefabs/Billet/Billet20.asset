@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 20
   taille: 1.25
+  icon: {fileID: 0}
   type: 1
+  id: 0

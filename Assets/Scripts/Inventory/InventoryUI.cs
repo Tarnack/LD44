@@ -6,7 +6,8 @@ public class InventoryUI : MonoBehaviour
 {
 
     public Transform itemsParent;   // The parent object of all the items
-    public GameObject inventoryUI;  // The entire UI
+    public GameObject inventoryUI; // The entire UI
+    public GameObject moduleActif;
 
     Inventory inventory;    // Our current inventory
 
@@ -18,6 +19,7 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallBack += UpdateUI;    // Subscribe to the onItemChanged callback
 
         // Populate our slots array
+        
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
 
@@ -36,12 +38,14 @@ public class InventoryUI : MonoBehaviour
     // This is called using a delegate on the Inventory.
     void UpdateUI()
     {
+        if (moduleActif == null)
+            return;
         // Loop through all the slots
         for (int i = 0; i < slots.Length; i++)
         {
-            if (i < inventory.currencys.Count)  // If there is an item to add
+            if (i < inventory.dictionary[moduleActif].Count)  // If there is an item to add
             {
-                slots[i].AddItem(inventory.currencys[i]);   // Add it
+                slots[i].AddItem(inventory.dictionary[moduleActif][i]);   // Add it
             }
             else
             {

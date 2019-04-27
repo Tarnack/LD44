@@ -6,7 +6,12 @@ public class Inventory : MonoBehaviour
 {
 
     #region Singleton
+    
     public static Inventory instance;
+    [SerializeField]
+    public Dictionary<GameObject, List<CurrencySO>> dictionary;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,33 +22,51 @@ public class Inventory : MonoBehaviour
         }
 
         instance = this;
+
+        dictionary = new Dictionary<GameObject, List<CurrencySO>>();
     }
     #endregion
     // Update is called once per frame
 
+   
+    
+
+    private void Start()
+    {
+
+       
+    }
+
+    public void CreateDictionary(GameObject go)
+    {
+       Debug.Log(dictionary);
+       dictionary.Add(go, new List<CurrencySO>());
+       
+    }
+
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
 
-    public int space = 20;
-    public List<CurrencySO> currencys = new List<CurrencySO>();
+   // public List<CurrencySO> currencys = new List<CurrencySO>();
 
-    public bool Add (CurrencySO currency)
+    public bool Add (CurrencySO currency, GameObject module)
     {
-        if (currencys.Count >= space)
+        Debug.Log(module.tag);
+        if (dictionary[module].Count >= module.GetComponent<WalletInfos>().pieceCapacity + module.GetComponent<WalletInfos>().billetCapacity)
         {
             Debug.Log("Not enough room");
             return false;
         }
-        currencys.Add(currency);
+        dictionary[module].Add(currency);
 
         if(onItemChangedCallBack != null)
         onItemChangedCallBack.Invoke();
 
         return true;
     }
-    public void Remove (CurrencySO currency)
+    public void Remove (CurrencySO currency, GameObject module)
     {
-        currencys.Remove(currency);
+        dictionary[module].Remove(currency);
 
         if (onItemChangedCallBack != null)
             onItemChangedCallBack.Invoke();

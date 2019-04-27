@@ -37,15 +37,14 @@ public class ItemDrop : MonoBehaviour
     {
         if (!gameObject.GetComponent<DragAndDrop>().isSelected && i == 1)
         {
-            DropItem();
+            DropItem(other);
         }
 
     }
 
-    void DropItem()
+    void DropItem(Collider other)
     {
-        Debug.Log("zbub");
-        wasDropped = Inventory.instance.Add(currency);
+        wasDropped = Inventory.instance.Add(currency, other.gameObject);
 
         if (wasDropped)
         {

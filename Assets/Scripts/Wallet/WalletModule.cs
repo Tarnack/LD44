@@ -21,13 +21,17 @@ public class WalletModule
         go.GetComponent<WalletInfos>().pieceCapacity = pieceCapacity;
         go.GetComponent<WalletInfos>().billetCapacity = billetCapacity;
         Debug.Log("Capacity :  piece  : "+pieceCapacity+"  billet : "+billetCapacity);
+
+        Inventory inventory;
+        inventory = Inventory.instance;
+
+        inventory.CreateDictionary(go);
     }
 
 
     public void SetVisible(bool visibility)
     {
         this.visibility = visibility;
-        Debug.Log(go.GetComponentsInChildren<Material>()[2].color);
     }
 
 }
