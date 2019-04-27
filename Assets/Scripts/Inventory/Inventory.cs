@@ -25,25 +25,25 @@ public class Inventory : MonoBehaviour
     public OnItemChanged onItemChangedCallBack;
 
     public int space = 20;
-    public List<Item> items = new List<Item>();
+    public List<CurrencySO> currencys = new List<CurrencySO>();
 
-    public bool Add (Item item)
+    public bool Add (CurrencySO currency)
     {
-        if (items.Count >= space)
+        if (currencys.Count >= space)
         {
             Debug.Log("Not enough room");
             return false;
         }
-        items.Add(item);
+        currencys.Add(currency);
 
         if(onItemChangedCallBack != null)
         onItemChangedCallBack.Invoke();
 
         return true;
     }
-    public void Remove (Item item)
+    public void Remove (CurrencySO currency)
     {
-        items.Remove(item);
+        currencys.Remove(currency);
 
         if (onItemChangedCallBack != null)
             onItemChangedCallBack.Invoke();

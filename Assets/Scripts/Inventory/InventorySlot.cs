@@ -6,18 +6,18 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
 
-    public Image icon;          // Reference to the Icon image
-   // public Button removeButton; // Reference to the remove button
+    public Image icon;
 
-    Item item;
-    public GameObject go;// Current item in the slot
+    // public Button removeButton; // Reference to the remove button
+    private ItemCreation iC;
+    CurrencySO currency;// Current item in the slot
 
     // Add item to the slot
-    public void AddItem(Item newItem)
+    public void AddItem(CurrencySO newCurrency)
     {
-        item = newItem;
+        currency = newCurrency;
 
-        icon.sprite = item.icon;
+        icon.sprite = currency.icon;
         icon.enabled = true;
         //removeButton.interactable = true;
     }
@@ -25,7 +25,7 @@ public class InventorySlot : MonoBehaviour
     // Clear the slot
     public void ClearSlot()
     {
-        item = null;
+        currency = null;
 
         icon.sprite = null;
         icon.enabled = false;
@@ -35,11 +35,11 @@ public class InventorySlot : MonoBehaviour
     // Called when the remove button is pressed
     public void OnRemoveButton()
     {
-           
-        Inventory.instance.Remove(item);
+        GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(currency.id, GetComponent<Transform>().position);
 
-
-}
+    
+        Inventory.instance.Remove(currency);
+    }
 
     // Called when the item is pressed
    /* public void UseItem()

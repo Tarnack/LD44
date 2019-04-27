@@ -7,7 +7,9 @@ public class CurrencySO: ScriptableObject
 {
     public float value;
     public float taille;
+    public Sprite icon;
     public CurrencyType type;
+    public int id;
 
     public enum CurrencyType
     {
