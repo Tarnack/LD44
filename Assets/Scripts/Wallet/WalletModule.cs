@@ -27,7 +27,6 @@ public class WalletModule
     public void SetVisible(bool visibility)
     {
         this.visibility = visibility;
-        Debug.Log(go.GetComponentsInChildren<Material>()[2].color);
     }
 
 }

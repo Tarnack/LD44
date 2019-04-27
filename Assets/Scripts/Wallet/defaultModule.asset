@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8fee61f26ea1bb43a7ac204cf49e3e7, type: 3}
+  m_Script: {fileID: 11500000, guid: d230a320dbee3b74e9f7d22d6f27bf7b, type: 3}
   m_Name: defaultModule
   m_EditorClassIdentifier: 
   pieceCapacityMin: 0
-  pieceCapacityMax: 10
+  pieceCapacityMax: 3
   billetCapacityMin: 0
-  billetCapacityMax: 3
-  prefab: {fileID: 7545681859162958543, guid: 066f083f52678b842b544a9c60ae64fe, type: 3}
+  billetCapacityMax: 10
+  prefab: {fileID: 7530629179597789228, guid: e4844be828f9c92408538a8597b29054, type: 3}
