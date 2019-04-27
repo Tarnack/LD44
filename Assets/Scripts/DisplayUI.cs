@@ -24,7 +24,7 @@ public class DisplayUI : MonoBehaviour
 
         if(Input.GetKeyDown (KeyCode.Escape))
         {
-            Screen.lockCursor = false;
+            Cursor.visible = false;
         }
     }
 
