@@ -8,13 +8,17 @@ public class WalletModule
     // Start is called before the first frame update
     public WalletModule(WalletModuleSO so, Vector3 position)
     {
-        MonoBehaviour.Instantiate(so.prefab, position, Quaternion.identity);
         pieceCapacity = Random.Range(so.pieceCapacityMin, so.pieceCapacityMax);
         billetCapacity = Random.Range(so.billetCapacityMin, so.billetCapacityMax);
-        if(pieceCapacity + billetCapacity < 1)
+        if (pieceCapacity + billetCapacity < 1)
         {
             pieceCapacity = 1;
         }
+        GameObject go = MonoBehaviour.Instantiate(so.prefab, position, Quaternion.identity);
+        go.AddComponent<WalletInfos>();
+        go.GetComponent<WalletInfos>().pieceCapacity = pieceCapacity;
+        go.GetComponent<WalletInfos>().billetCapacity = billetCapacity;
+        Debug.Log("Capacity :  piece  : "+pieceCapacity+"  billet : "+billetCapacity);
     }
 
 
