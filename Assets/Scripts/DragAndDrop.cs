@@ -33,4 +33,9 @@ public class DragAndDrop : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
 
     }
+
+    private void OnMouseUp()
+    {
+        Inventory.instance.Add(gameObject.GetComponent<Item>());
+    }
 }
