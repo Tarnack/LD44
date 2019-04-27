@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d230a320dbee3b74e9f7d22d6f27bf7b, type: 3}
+  m_Name: defaultModule
+  m_EditorClassIdentifier: 
+  pieceCapacityMin: 0
+  pieceCapacityMax: 10
+  billetCapacityMin: 0
+  billetCapacityMax: 3
+  prefab: {fileID: 7406204445404578137, guid: 830ed2e31e9383d448fca21cd29dfc38, type: 3}
