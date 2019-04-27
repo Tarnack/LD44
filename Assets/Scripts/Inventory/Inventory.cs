@@ -27,13 +27,19 @@ public class Inventory : MonoBehaviour
     public int space = 20;
     public List<Item> items = new List<Item>();
 
-    public void Add (Item item)
+    public bool Add (Item item)
     {
-        if (items.Count<space)
+        if (items.Count >= space)
+        {
+            Debug.Log("Not enough room");
+            return false;
+        }
         items.Add(item);
 
         if(onItemChangedCallBack != null)
         onItemChangedCallBack.Invoke();
+
+        return true;
     }
     public void Remove (Item item)
     {

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
- 
+    public bool isSelected;
     private Vector3 mOffset;
     private float mZCoord;
+
+   
 
     // Update is called once per frame
 
@@ -20,6 +22,13 @@ public class DragAndDrop : MonoBehaviour
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
         mOffset = gameObject.transform.position - GetMouseWorldPos();
+        isSelected = true;
+
+    }
+
+    private void OnMouseUp()
+    {
+        isSelected = false;
     }
 
     private Vector3 GetMouseWorldPos()
@@ -34,8 +43,5 @@ public class DragAndDrop : MonoBehaviour
 
     }
 
-    private void OnMouseUp()
-    {
-        Inventory.instance.Add(gameObject.GetComponent<Item>());
-    }
+   
 }
