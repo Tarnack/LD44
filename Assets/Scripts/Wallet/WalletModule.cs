@@ -19,6 +19,11 @@ public class WalletModule
         go.GetComponent<WalletInfos>().pieceCapacity = pieceCapacity;
         go.GetComponent<WalletInfos>().billetCapacity = billetCapacity;
         Debug.Log("Capacity :  piece  : "+pieceCapacity+"  billet : "+billetCapacity);
+
+        Inventory inventory;
+        inventory = Inventory.instance;
+
+        inventory.CreateDictionary(go);
     }
 
 

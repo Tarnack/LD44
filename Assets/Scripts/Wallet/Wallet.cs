@@ -17,6 +17,8 @@ public class Wallet : MonoBehaviour
         foreach (int[] pos in positions)
             modules[pos[0], pos[1]] = new WalletModule(defaultModule, new Vector3(pos[0] * size + offsetX , pos[1] * size + offsetY) );
 
+
+
     }
 
     // Update is called once per frame

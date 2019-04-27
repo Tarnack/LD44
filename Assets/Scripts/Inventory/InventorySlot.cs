@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour
     public Image icon;
 
     // public Button removeButton; // Reference to the remove button
-    private ItemCreation iC;
+   
     CurrencySO currency;// Current item in the slot
 
     // Add item to the slot
@@ -38,7 +38,7 @@ public class InventorySlot : MonoBehaviour
         GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(currency.id, GetComponent<Transform>().position);
 
     
-        Inventory.instance.Remove(currency);
+        Inventory.instance.Remove(currency, GetComponentInParent<InventoryUI>().moduleActif);
     }
 
     // Called when the item is pressed

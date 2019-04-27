@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1342312165690598900}
   - component: {fileID: 8938869576572307024}
   - component: {fileID: 1862617264176237954}
+  - component: {fileID: -2132265781393479011}
   m_Layer: 0
   m_Name: ZipperParent
   m_TagString: Zipper
@@ -62,6 +63,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2132265781393479011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530629179597789228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb804600a088fd4f9f4e1687136aa14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myString: tesssssssttt
+  myText: {fileID: 0}
+  fadeTime: 10
+  displayInfo: 0
+  invUI: {fileID: 0}
 --- !u!1001 &8632446310310835672
 PrefabInstance:
   m_ObjectHideFlags: 0

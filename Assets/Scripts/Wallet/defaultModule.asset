@@ -16,4 +16,4 @@ MonoBehaviour:
   pieceCapacityMax: 10
   billetCapacityMin: 0
   billetCapacityMax: 3
-  prefab: {fileID: 7545681859162958543, guid: 066f083f52678b842b544a9c60ae64fe, type: 3}
+  prefab: {fileID: 7530629179597789228, guid: 100c4e92fca572944a0d72c70024c13a, type: 3}
