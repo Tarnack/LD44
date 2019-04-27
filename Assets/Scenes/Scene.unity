@@ -302,7 +302,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1282109868}
+      - m_Target: {fileID: 0}
         m_MethodName: ItemGeneration
         m_Mode: 2
         m_Arguments:
@@ -1081,7 +1081,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 339303291}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1392,6 +1392,7 @@ GameObject:
   - component: {fileID: 476603797}
   - component: {fileID: 476603796}
   - component: {fileID: 476603799}
+  - component: {fileID: 476603800}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1456,11 +1457,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 476603795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c423f28affa5042b0bf7eeaadcdbc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 82bdea705d22e284fbfcaed4c1a90a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultModule: {fileID: 11400000, guid: 5741083cc020405458fef94b6d8b1c6d, type: 2}
+--- !u!114 &476603800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476603795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5fce1b52ab9ae4893504e3b4acce96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultModule: {fileID: 11400000, guid: 09d0d483ad434bb49bcd87e1323fb485, type: 2}
---- !u!1001 &584351971
+--- !u!1001 &5843<<51971
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1871,7 +1885,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1282109868}
+      - m_Target: {fileID: 0}
         m_MethodName: ItemGeneration
         m_Mode: 2
         m_Arguments:
@@ -2517,7 +2531,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1282109868}
+      - m_Target: {fileID: 0}
         m_MethodName: ItemGeneration
         m_Mode: 2
         m_Arguments:
@@ -3341,7 +3355,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1282109868}
+      - m_Target: {fileID: 0}
         m_MethodName: ItemGeneration
         m_Mode: 2
         m_Arguments:
@@ -3484,7 +3498,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1282109868}
+      - m_Target: {fileID: 0}
         m_MethodName: ItemGeneration
         m_Mode: 2
         m_Arguments:
@@ -4424,3 +4438,4 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a4d60cee9f4f71d45b3a8d5fefe6e509, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd926d60463d854b8ff3aaef1011bd1, type: 3}
+
