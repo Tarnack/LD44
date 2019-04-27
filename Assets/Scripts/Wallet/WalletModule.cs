@@ -5,6 +5,8 @@ using UnityEngine;
 public class WalletModule
 {
     public int pieceCapacity, billetCapacity;
+    private bool visibility;
+    private GameObject go;
     // Start is called before the first frame update
     public WalletModule(WalletModuleSO so, Vector3 position)
     {
@@ -14,7 +16,7 @@ public class WalletModule
         {
             pieceCapacity = 1;
         }
-        GameObject go = MonoBehaviour.Instantiate(so.prefab, position, Quaternion.identity);
+        go = MonoBehaviour.Instantiate(so.prefab, position, Quaternion.identity);
         go.AddComponent<WalletInfos>();
         go.GetComponent<WalletInfos>().pieceCapacity = pieceCapacity;
         go.GetComponent<WalletInfos>().billetCapacity = billetCapacity;
@@ -22,14 +24,10 @@ public class WalletModule
     }
 
 
-    void Start()
+    public void SetVisible(bool visibility)
     {
-        
+        this.visibility = visibility;
+        Debug.Log(go.GetComponentsInChildren<Material>()[2].color);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
