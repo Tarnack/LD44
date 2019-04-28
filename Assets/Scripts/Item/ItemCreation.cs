@@ -10,7 +10,9 @@ public class ItemCreation : MonoBehaviour
     public GameObject ItemGeneration(int index, Vector3 itemPos)
     {
         
-        return Instantiate(gObjects[index], new Vector3(itemPos.x, itemPos.y, -2), Quaternion.identity); 
+        GameObject go = Instantiate(gObjects[index], new Vector3(itemPos.x, itemPos.y, -2), Quaternion.identity);
+        go.GetComponent<DragAndDrop>().isSelected = true;
+        return go;
 
     }
 }
