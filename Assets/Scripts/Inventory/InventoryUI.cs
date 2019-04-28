@@ -38,10 +38,14 @@ public class InventoryUI : MonoBehaviour
 
         foreach (InventorySlot[] s in slots)
         {
-            foreach(InventorySlot item in s)
+            if(s != null)
             {
-                if (item == slot) index = i;
+                foreach (InventorySlot item in s)
+                {
+                    if (item == slot) index = i;
+                }
             }
+          
 
             i++;
         }

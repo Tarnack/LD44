@@ -69,7 +69,6 @@ public class DisplayUI : MonoBehaviour
         invUI.CreationSlot();
 
 
-        Debug.Log("coucou");
     }
 
     private void OnMouseExit()

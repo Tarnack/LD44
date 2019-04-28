@@ -8,13 +8,12 @@ public class DragAndDrop : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
 
+    
 
-
-
-    // Update is called once per frame
 
     private void OnMouseDrag()
     {
+       
         transform.position = GetMouseWorldPos() + mOffset;
     }
 

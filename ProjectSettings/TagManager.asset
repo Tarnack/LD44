@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Parent
   - Zipper
+  - BackGround
   layers:
   - Default
   - TransparentFX

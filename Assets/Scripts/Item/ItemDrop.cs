@@ -37,6 +37,7 @@ public class ItemDrop : MonoBehaviour
     {
         if (!gameObject.GetComponent<DragAndDrop>().isSelected && i == 1)
         {
+            Debug.Log(other.tag);
             DropItem(other);
         }
 
@@ -44,7 +45,16 @@ public class ItemDrop : MonoBehaviour
 
     void DropItem(Collider other)
     {
-        wasDropped = Inventory.instance.Add(currency, other.gameObject);
+        if(other.tag != "Zipper")
+        {
+            wasDropped = Inventory.instance.Add(currency, GetComponent<ItemSlotOrigin>().lastModule);
+        }
+
+        else
+        {
+            wasDropped = Inventory.instance.Add(currency, other.gameObject);
+        }
+        
 
         if (wasDropped)
         {
