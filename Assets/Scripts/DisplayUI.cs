@@ -51,8 +51,8 @@ public class DisplayUI : MonoBehaviour
         {
             displays[i].Deselect();
         }
-          
-     
+        invUI.ClearInv();
+        
         displayInfo = true;
        
         if(invUI.moduleActifs.Count >1)
@@ -78,12 +78,9 @@ public class DisplayUI : MonoBehaviour
         if (index <= 0)
         {
             GetComponentInChildren<SpriteRenderer>().enabled = false;
+                
         }
-            
-        else
-        {
-
-        }
+        
     }
 
     void FadeText()

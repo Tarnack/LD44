@@ -32,7 +32,6 @@ public class InventorySlot : MonoBehaviour
         temporary = GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(currency.id, GetComponent<Transform>().position);
 
         temporary.GetComponent<ItemSlotOrigin>().lastModule = (GameObject)GetComponentInParent<InventoryUI>().moduleActifs[invUI.Index(this)];
-        
     }
 
     // Clear the slot
@@ -43,18 +42,9 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = null;
         icon.enabled = false;
         // removeButton.interactable = false;
-
         Destroy(temporary);
     }
 
-    // Called when the remove button is pressed
-    public void OnMouseDown()
-    {
-       // GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(currency.id, GetComponent<Transform>().position);
-        
-    
-        Inventory.instance.Remove(currency, (GameObject)GetComponentInParent<InventoryUI>().moduleActifs[invUI.Index(this)]);
-    }
 
     // Called when the item is pressed
    /* public void UseItem()
@@ -64,6 +54,9 @@ public class InventorySlot : MonoBehaviour
             item.Use();
         }
     }*/
-    
+    public void DestroyGO()
+    {
+        Destroy(temporary);
+    }
 
 }

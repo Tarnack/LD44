@@ -5,7 +5,6 @@ using UnityEngine;
 public class ItemDrop : MonoBehaviour
 {
     public CurrencySO currency;
-    private bool wasDropped;
     private int i;
 
     private void Update()
@@ -51,14 +50,18 @@ public class ItemDrop : MonoBehaviour
          {
              //
          }*/
-
-
+        bool wasDropped = false;
+        bool remove = true;
         if(i ==1)
         {
             if (other.tag == "Zipper")
             {
-                wasDropped = Inventory.instance.Add(currency, other.gameObject);
+                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
+                    remove = Inventory.instance.Add(currency, other.gameObject);
+                else
+                    remove = false;
             }
+            wasDropped = true;
         }
 
         else
@@ -71,6 +74,9 @@ public class ItemDrop : MonoBehaviour
         if (wasDropped)
         {
             Destroy(gameObject);
+            Inventory.instance.Remove(currency, GetComponent<ItemSlotOrigin>().lastModule);
+            if (!remove)
+                Inventory.instance.Add(currency, GetComponent<ItemSlotOrigin>().lastModule);
         }
     }
 

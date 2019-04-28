@@ -75,6 +75,7 @@ public class InventoryUI : MonoBehaviour
             slots[i] = itemsParents[i].GetComponentsInChildren<InventorySlot>();
             i++;
         }
+        
            
     }
 
@@ -92,7 +93,6 @@ public class InventoryUI : MonoBehaviour
             {
                 if (i < inventory.dictionary[moduleActif].Count)  // If there is an item to add
                 {
-                    Debug.Log(inventory.dictionary[moduleActif][i]);
                     slots[index][i].AddItem(inventory.dictionary[moduleActif][i]);   // Add it
                 }
                 else
@@ -104,6 +104,15 @@ public class InventoryUI : MonoBehaviour
 
             index++;
         }  
+    }
+
+
+    public void ClearInv()
+    {
+        foreach( InventorySlot[] slot in slots)
+            if(slot != null)
+                foreach (InventorySlot sl in slot)
+                    sl.DestroyGO();
     }
 
 }
