@@ -11,7 +11,6 @@ public class DisplayUI : MonoBehaviour
     public float fadeTime;
     public bool displayInfo;
     public InventoryUI invUI;
-    private bool lastSelected;
     private int index;
  
     // Start is called before the first frame update
@@ -84,7 +83,6 @@ public class DisplayUI : MonoBehaviour
         if (index <= 0)
         {
             GetComponentInChildren<SpriteRenderer>().enabled = false;
-            lastSelected = false;
         }
             
         else
