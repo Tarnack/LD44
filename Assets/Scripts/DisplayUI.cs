@@ -51,8 +51,7 @@ public class DisplayUI : MonoBehaviour
             for (int i = 0; i < displays.Length; i++)
             {
                 Debug.Log("glow");
-
-            displays[i].Deselect();
+                displays[i].Deselect();
 
             }
           
