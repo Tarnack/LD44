@@ -51,7 +51,6 @@ public class Inventory : MonoBehaviour
 
     public bool Add (CurrencySO currency, GameObject module)
     {
-        Debug.Log(module.tag);
         if (dictionary[module].Count >= module.GetComponent<WalletInfos>().pieceCapacity + module.GetComponent<WalletInfos>().billetCapacity)
         {
             Debug.Log("Not enough room");

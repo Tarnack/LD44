@@ -44,6 +44,8 @@ public class ItemDrop : MonoBehaviour
 
     }
 
+
+
     void DropItem(Collider other)
     {
         /* if(other.tag != "Zipper")
@@ -60,14 +62,17 @@ public class ItemDrop : MonoBehaviour
                     remove = Inventory.instance.Add(currency, other.gameObject);
                 else
                     remove = false;
-            }
             wasDropped = true;
+            }
         }
 
         else
         {
             if (GetComponent<ItemSlotOrigin>().lastModule != null)
-                wasDropped = Inventory.instance.Add(currency, GetComponent<ItemSlotOrigin>().lastModule);
+            {
+                remove = false;
+                wasDropped = true;
+            }
         }
 
 
