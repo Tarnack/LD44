@@ -60,6 +60,9 @@ public class InventoryUI : MonoBehaviour
 
     public void CreationSlot()
     {
+        inventory = Inventory.instance;
+        inventory.onItemChangedCallBack += UpdateUI;
+
         int i = 0;
         foreach (GameObject moduleActif in moduleActifs)
         {
