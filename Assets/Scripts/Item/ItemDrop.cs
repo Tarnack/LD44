@@ -35,26 +35,38 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!gameObject.GetComponent<DragAndDrop>().isSelected && i == 1)
+        if (!gameObject.GetComponent<DragAndDrop>().isSelected)
         {
-            Debug.Log(other.tag);
             DropItem(other);
+           
+            
+            
         }
 
     }
 
     void DropItem(Collider other)
     {
-        if(other.tag != "Zipper")
+        /* if(other.tag != "Zipper")
+         {
+             //
+         }*/
+
+
+        if(i ==1)
         {
-            wasDropped = Inventory.instance.Add(currency, GetComponent<ItemSlotOrigin>().lastModule);
+            if (other.tag == "Zipper")
+            {
+                wasDropped = Inventory.instance.Add(currency, other.gameObject);
+            }
         }
 
         else
         {
-            wasDropped = Inventory.instance.Add(currency, other.gameObject);
+            if (GetComponent<ItemSlotOrigin>().lastModule != null)
+                wasDropped = Inventory.instance.Add(currency, GetComponent<ItemSlotOrigin>().lastModule);
         }
-        
+
 
         if (wasDropped)
         {

@@ -49,7 +49,7 @@ public class DisplayUI : MonoBehaviour
         
             for (int i = 0; i < displays.Length; i++)
             {
-                Debug.Log("glow");
+               
                 displays[i].Deselect();
 
             }
@@ -58,7 +58,7 @@ public class DisplayUI : MonoBehaviour
 
 
         displayInfo = true;
-        Debug.Log(invUI.moduleActifs.Count);
+       
         if(invUI.moduleActifs.Count >1)
         {
             invUI.moduleActifs.RemoveAt(0);
