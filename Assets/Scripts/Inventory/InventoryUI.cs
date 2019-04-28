@@ -45,6 +45,7 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < inventory.dictionary[moduleActif].Count)  // If there is an item to add
             {
+                Debug.Log(inventory.dictionary[moduleActif][i]);
                 slots[i].AddItem(inventory.dictionary[moduleActif][i]);   // Add it
             }
             else

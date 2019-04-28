@@ -39,9 +39,9 @@ public class Inventory : MonoBehaviour
 
     public void CreateDictionary(GameObject go)
     {
-       Debug.Log(dictionary);
+    
        dictionary.Add(go, new List<CurrencySO>());
-       
+        Debug.Log(dictionary.ToString());
     }
 
     public delegate void OnItemChanged();

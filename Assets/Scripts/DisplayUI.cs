@@ -11,10 +11,12 @@ public class DisplayUI : MonoBehaviour
     public float fadeTime;
     public bool displayInfo;
     public InventoryUI invUI;
+ 
     // Start is called before the first frame update
     void Start()
     {
         myText = GameObject.Find("Text").GetComponent<Text>();
+        invUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
         myText.color = Color.clear;
         
     }
@@ -33,7 +35,7 @@ public class DisplayUI : MonoBehaviour
     private void OnMouseDown()
     {
         displayInfo = true;
-        invUI.moduleActif = GetComponent<GameObject>();
+        invUI.moduleActif = gameObject;
         Debug.Log("coucou");
     }
 
