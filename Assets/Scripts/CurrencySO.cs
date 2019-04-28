@@ -10,6 +10,7 @@ public class CurrencySO: ScriptableObject
     public Sprite icon;
     public CurrencyType type;
     public int id;
+	public GameObject model;
 
     public enum CurrencyType
     {
