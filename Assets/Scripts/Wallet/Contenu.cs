@@ -11,7 +11,7 @@ public class Contenu : MonoBehaviour
     {
         float somme = 0;
         foreach (CurrencySO curren in dic.Keys)
-            somme += curren.value * ;
+            somme += curren.value * dic[curren] ;
         return somme;
     }
 
