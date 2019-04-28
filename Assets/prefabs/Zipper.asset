@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d230a320dbee3b74e9f7d22d6f27bf7b, type: 3}
+  m_Name: Zipper
+  m_EditorClassIdentifier: 
+  pieceCapacityMin: 2
+  pieceCapacityMax: 5
+  billetCapacityMin: 0
+  billetCapacityMax: 0
+  prefab: {fileID: 7530629179597789228, guid: e4844be828f9c92408538a8597b29054, type: 3}
