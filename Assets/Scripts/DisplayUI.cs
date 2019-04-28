@@ -47,16 +47,12 @@ public class DisplayUI : MonoBehaviour
         DisplayUI[] displays = FindObjectsOfType<DisplayUI>();
         
         
-            for (int i = 0; i < displays.Length; i++)
-            {
-               
-                displays[i].Deselect();
-
-            }
+        for (int i = 0; i < displays.Length; i++)
+        {
+            displays[i].Deselect();
+        }
           
      
-
-
         displayInfo = true;
        
         if(invUI.moduleActifs.Count >1)
@@ -67,7 +63,7 @@ public class DisplayUI : MonoBehaviour
         invUI.moduleActifs.Add(gameObject);
 
         invUI.CreationSlot();
-
+        Inventory.instance.onItemChangedCallBack.Invoke();
 
     }
 

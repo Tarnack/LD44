@@ -42,7 +42,9 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = null;
         icon.enabled = false;
-       // removeButton.interactable = false;
+        // removeButton.interactable = false;
+
+        Destroy(temporary);
     }
 
     // Called when the remove button is pressed
@@ -62,5 +64,6 @@ public class InventorySlot : MonoBehaviour
             item.Use();
         }
     }*/
+    
 
 }
