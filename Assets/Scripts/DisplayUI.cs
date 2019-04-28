@@ -43,7 +43,7 @@ public class DisplayUI : MonoBehaviour
         
         GetComponentInChildren<SpriteRenderer>().enabled = true;
         index = 3;
-        lastSelected = true;
+        
 
         DisplayUI[] displays = FindObjectsOfType<DisplayUI>();
         
@@ -60,7 +60,17 @@ public class DisplayUI : MonoBehaviour
 
 
         displayInfo = true;
-        invUI.moduleActif = gameObject;
+        Debug.Log(invUI.moduleActifs.Count);
+        if(invUI.moduleActifs.Count >1)
+        {
+            invUI.moduleActifs.RemoveAt(0);
+
+        }
+        invUI.moduleActifs.Add(gameObject);
+
+        invUI.CreationSlot();
+
+
         Debug.Log("coucou");
     }
 
@@ -71,10 +81,17 @@ public class DisplayUI : MonoBehaviour
 
     public void Deselect()
     {
-            index--;
-            if (index <= 0)
+        index--;
+        if (index <= 0)
+        {
             GetComponentInChildren<SpriteRenderer>().enabled = false;
             lastSelected = false;
+        }
+            
+        else
+        {
+
+        }
     }
 
     void FadeText()

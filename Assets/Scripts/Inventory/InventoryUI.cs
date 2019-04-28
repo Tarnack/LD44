@@ -1,26 +1,52 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 
 /* This object updates the inventory UI. */
 
 public class InventoryUI : MonoBehaviour
 {
-
-    public Transform itemsParent;   // The parent object of all the items
+    
+    public Transform[] itemsParents;   // The parent object of all the items
     public GameObject inventoryUI; // The entire UI
-    public GameObject moduleActif;
+    public ArrayList moduleActifs;
+  
 
     Inventory inventory;    // Our current inventory
 
-    InventorySlot[] slots;  // List of all the slots
+    private InventorySlot[][] slots;  // List of all the slots
 
     void Start()
     {
+        
+        moduleActifs = new ArrayList();
         inventory = Inventory.instance;
-        inventory.onItemChangedCallBack += UpdateUI;    // Subscribe to the onItemChanged callback
+        inventory.onItemChangedCallBack += UpdateUI;  // Subscribe to the onItemChanged callback
+        slots = new InventorySlot[2][];
 
         // Populate our slots array
-        
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+        //call later
+        //
+    }
+
+    public int Index(InventorySlot slot)
+    {
+        int index = 0;
+        int i = 0;
+
+        foreach (InventorySlot[] s in slots)
+        {
+            foreach(InventorySlot item in s)
+            {
+                if (item == slot) index = i;
+            }
+
+            i++;
+        }
+
+        return index;
     }
 
     void Update()
@@ -32,27 +58,43 @@ public class InventoryUI : MonoBehaviour
         }*/
     }
 
+    public void CreationSlot()
+    {
+        int i = 0;
+        foreach (GameObject moduleActif in moduleActifs)
+        {
+
+            slots[i] = itemsParents[i].GetComponentsInChildren<InventorySlot>();
+            i++;
+        }
+           
+    }
+
     // Update the inventory UI by:
     //		- Adding items
     //		- Clearing empty slots
     // This is called using a delegate on the Inventory.
     void UpdateUI()
     {
-        if (moduleActif == null)
-            return;
+        int index = 0;
         // Loop through all the slots
-        for (int i = 0; i < slots.Length; i++)
+        foreach (GameObject moduleActif in moduleActifs)
         {
-            if (i < inventory.dictionary[moduleActif].Count)  // If there is an item to add
+            for (int i = 0; i < slots.Length; i++)
             {
-                Debug.Log(inventory.dictionary[moduleActif][i]);
-                slots[i].AddItem(inventory.dictionary[moduleActif][i]);   // Add it
+                if (i < inventory.dictionary[moduleActif].Count)  // If there is an item to add
+                {
+                    Debug.Log(inventory.dictionary[moduleActif][i]);
+                    slots[index][i].AddItem(inventory.dictionary[moduleActif][i]);   // Add it
+                }
+                else
+                {
+                    // Otherwise clear the slot
+                    slots[index][i].ClearSlot();
+                }
             }
-            else
-            {
-                // Otherwise clear the slot
-                slots[i].ClearSlot();
-            }
-        }
+
+            index++;
+        }  
     }
 }

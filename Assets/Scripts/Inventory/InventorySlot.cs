@@ -7,10 +7,16 @@ public class InventorySlot : MonoBehaviour
 {
 
     public Image icon;
+    private InventoryUI invUI;
 
     // public Button removeButton; // Reference to the remove button
    
     CurrencySO currency;// Current item in the slot
+
+    private void Start()
+    {
+        invUI = FindObjectOfType<InventoryUI>();
+    }
 
     // Add item to the slot
     public void AddItem(CurrencySO newCurrency)
@@ -36,9 +42,9 @@ public class InventorySlot : MonoBehaviour
     public void OnRemoveButton()
     {
         GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(currency.id, GetComponent<Transform>().position);
-
+        
     
-        Inventory.instance.Remove(currency, GetComponentInParent<InventoryUI>().moduleActif);
+        Inventory.instance.Remove(currency, (GameObject)GetComponentInParent<InventoryUI>().moduleActifs[invUI.Index(this)]);
     }
 
     // Called when the item is pressed
