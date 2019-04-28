@@ -11,6 +11,8 @@ public class DisplayUI : MonoBehaviour
     public float fadeTime;
     public bool displayInfo;
     public InventoryUI invUI;
+    private bool lastSelected;
+    private int index;
  
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class DisplayUI : MonoBehaviour
         myText = GameObject.Find("Text").GetComponent<Text>();
         invUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
         myText.color = Color.clear;
+        index = 0;
         
     }
 
@@ -34,6 +37,28 @@ public class DisplayUI : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+        if (GetComponentInChildren<SpriteRenderer>().enabled == true)
+            return;
+        
+        GetComponentInChildren<SpriteRenderer>().enabled = true;
+        index = 3;
+        lastSelected = true;
+
+        DisplayUI[] displays = FindObjectsOfType<DisplayUI>();
+        
+        
+            for (int i = 0; i < displays.Length; i++)
+            {
+                Debug.Log("glow");
+
+            displays[i].Deselect();
+
+            }
+          
+     
+
+
         displayInfo = true;
         invUI.moduleActif = gameObject;
         Debug.Log("coucou");
@@ -42,6 +67,14 @@ public class DisplayUI : MonoBehaviour
     private void OnMouseExit()
     {
         displayInfo = false;
+    }
+
+    public void Deselect()
+    {
+            index--;
+            if (index <= 0)
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
+            lastSelected = false;
     }
 
     void FadeText()
