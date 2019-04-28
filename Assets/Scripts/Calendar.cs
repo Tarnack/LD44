@@ -11,7 +11,7 @@ public class Calendar : MonoBehaviour
 	private int MonthCount = 1;
 
 	
-	void NextDay()
+	public void NextDay()
 	{
 		dayCount++;
 		if(dayCount>=31)
@@ -23,6 +23,6 @@ public class Calendar : MonoBehaviour
 				MonthCount = 1;
 			}
 		}
-		cursor.Transform.Position = new Vector3( -0.8+0.3*((dayCount-dayCount%6)/6), 0.45-(0.3*((dayCount-dayCount%6)/6)),-0.01);
+		//cursor.Transform.Position = new Vector3( -0.8+0.3*((dayCount-dayCount%6)/6), 0.45-(0.3*((dayCount-dayCount%6)/6)),-0.01);
 	}
 }
