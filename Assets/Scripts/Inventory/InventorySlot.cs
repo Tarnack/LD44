@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
 
-    public Image icon;
+    public Image icon;//icon
     private InventoryUI invUI;
     private GameObject temporary;
 
