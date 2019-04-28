@@ -13,7 +13,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDrag()
     {
-       
+        GetComponent<Transform>().localScale = new Vector3(2,2,2);
         transform.position = GetMouseWorldPos() + mOffset;
     }
 
