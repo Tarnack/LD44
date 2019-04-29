@@ -18,7 +18,7 @@ public class DisplayUI : MonoBehaviour
     void Start()
     {
         //myText = GameObject.Find("Text").GetComponent<Text>();
-        invUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
+        invUI = GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>();
         //myText.color = Color.clear;
         index = 0;
         
