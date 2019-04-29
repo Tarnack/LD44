@@ -32,7 +32,8 @@ public class DisplayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myText.color = Color.Lerp(myText.color, Color.clear, fadeTime * Time.deltaTime);
+        if (myText != null)
+            myText.color = Color.Lerp(myText.color, Color.clear, fadeTime * Time.deltaTime);
 
         if (Input.GetKeyDown (KeyCode.Escape))
         {
@@ -109,7 +110,7 @@ public class DisplayUI : MonoBehaviour
         if (myText != null)
         {
             myText.text = myString;
-            myText.color = Color.white;
+            myText.color = Color.red;
         }
 
     }

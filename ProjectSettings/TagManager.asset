@@ -10,6 +10,7 @@ TagManager:
   - Inventory
   - InventoryUI
   - Inventory2
+  - Text
   layers:
   - Default
   - TransparentFX
