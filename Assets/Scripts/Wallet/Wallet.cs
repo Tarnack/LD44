@@ -27,6 +27,8 @@ public class Wallet : MonoBehaviour
             {
                 mod.SetVisible(false);
             }
+            else
+                mod.SetVisible(true);
         }
             
         
