@@ -54,6 +54,19 @@ public class ItemDrop : MonoBehaviour
          }*/
         bool wasDropped = false;
         bool remove = true;
+
+        if(other.tag == "Inventory")
+        {
+           
+                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
+                    remove = Inventory.instance.Add(currency, (GameObject)other.GetComponentInParent<InventoryUI>().moduleActifs[0]);
+                else
+                    remove = false;
+                wasDropped = true;
+
+        }
+
+
         if(i ==1)
         {
             if (other.gameObject.GetComponent<WalletInfos>() != null)
@@ -82,6 +95,7 @@ public class ItemDrop : MonoBehaviour
             Inventory.instance.Remove(currency, GetComponent<ItemSlotOrigin>().lastModule);
             if (!remove)
                 Inventory.instance.Add(currency, GetComponent<ItemSlotOrigin>().lastModule);
+
         }
     }
 
