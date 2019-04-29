@@ -10,7 +10,6 @@ public class InventoryUI : MonoBehaviour
 {
     
     public Transform[] itemsParents;   // The parent object of all the items
-    public GameObject inventoryUI; // The entire UI
     public ArrayList moduleActifs;
   
 
@@ -103,7 +102,8 @@ public class InventoryUI : MonoBehaviour
             }
 
             index++;
-        }  
+        }
+        Inventory.instance.totalMoney.text = "Total Money : " + Inventory.instance.GetContenuTotal().GetValue();
     }
 
 

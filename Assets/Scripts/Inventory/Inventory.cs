@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     [SerializeField]
     public Dictionary<GameObject, List<CurrencySO>> dictionary;
-
+    public Text totalMoney;
 
     // Start is called before the first frame update
     void Awake()
