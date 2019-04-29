@@ -10,5 +10,6 @@ public class EventSO : ScriptableObject
     public float cost;
     public float frustBaisse;
     public float frustAugment;
+    public float timer;
     public AudioClip soundTrack;
 }
