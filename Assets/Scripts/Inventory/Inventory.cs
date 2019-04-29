@@ -38,10 +38,10 @@ public class Inventory : MonoBehaviour
        
     }
 
-    public void CreateDictionary(GameObject go)
+    public void CreateDictionary(GameObject goModule)
     {
     
-       dictionary.Add(go, new List<CurrencySO>());
+       dictionary.Add(goModule, new List<CurrencySO>());
     }
 
     public delegate void OnItemChanged();
@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
 
    // public List<CurrencySO> currencys = new List<CurrencySO>();
 
-    public bool Add (CurrencySO currency, GameObject module)
+    public bool Add (CurrencySO currency, GameObject module, bool log = true)
     {
         bool contentOK = false;
 
@@ -57,13 +57,13 @@ public class Inventory : MonoBehaviour
             contentOK |= currency.id == possibleContent.id;
         if (!contentOK)
         {
-            Debug.Log("Ba type of content");
+            if (log) Debug.Log("Bad type of content");
             return false;
         }
 
         if (dictionary[module].Count >= module.GetComponent<WalletInfos>().capacity )
         {
-            Debug.Log("Not enough room");
+            if (log) Debug.Log("Not enough room");
             return false;
         }
         dictionary[module].Add(currency);
@@ -84,22 +84,53 @@ public class Inventory : MonoBehaviour
 
     public void UpdateContenu()
     {
-        Contenu contenuTotal = new Contenu();
+        totalMoney.text = "Total money : " + GetContenuTotal().GetValue();
+        visibleMoney.text = "Visible money : " + GetContenuVisible().GetValue();
+    }
+
+    public Contenu GetContenuVisible()
+    {
+
         Contenu contenuVisible = new Contenu();
         foreach (GameObject module in dictionary.Keys)
         {
-            foreach(CurrencySO so in dictionary[module])
+            foreach (CurrencySO so in dictionary[module])
             {
-                contenuTotal.AddCurr(so);
                 if (module.GetComponent<WalletInfos>().visible)
                 {
                     contenuVisible.AddCurr(so);
                 }
             }
         }
-        totalMoney.text = "Total money : " + contenuTotal.GetValue();
-        visibleMoney.text = "Visible money : " + contenuVisible.GetValue();
+        return contenuVisible;
     }
 
+    public Contenu GetContenuTotal()
+    {
+        Contenu contenuTotal = new Contenu();
+        foreach (GameObject module in dictionary.Keys)
+        {
+            foreach (CurrencySO so in dictionary[module])
+            {
+                contenuTotal.AddCurr(so);
+            }
+        }
 
+        return contenuTotal;
+    }
+
+    public bool AddCurrency(CurrencySO so)
+    {
+
+        bool added = false;
+        foreach (GameObject goModule in dictionary.Keys)
+        {
+            if (!added)
+            {
+                added = Add(so, goModule, false);
+                
+            }
+        }
+        return added;
+    }
 }

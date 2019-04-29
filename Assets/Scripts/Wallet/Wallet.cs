@@ -9,6 +9,7 @@ public class Wallet : MonoBehaviour
     public WalletModuleSO cardHolder;
     public WalletModuleSO billetHolder;
     // Start is called before the first frame update
+    public CurrencySO[] startingCurrencies;
     void Start()
     {
         float offsetX = -3;
@@ -31,6 +32,9 @@ public class Wallet : MonoBehaviour
                 mod.SetVisible(true);
             cpt++;
         }
+
+        foreach (CurrencySO currency in startingCurrencies)
+            Debug.Log(Inventory.instance.AddCurrency(currency));
             
         
     }
