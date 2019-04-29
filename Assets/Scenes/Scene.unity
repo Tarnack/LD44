@@ -1135,8 +1135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParents:
-  - {fileID: 1719460892}
   - {fileID: 1753531078}
+  - {fileID: 1719460892}
 --- !u!114 &617703944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,8 +2072,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1719460892}
   - {fileID: 1753531078}
+  - {fileID: 1719460892}
   - {fileID: 1223013832}
   - {fileID: 1729403334}
   - {fileID: 1244960172}
@@ -4167,7 +4167,7 @@ GameObject:
   - component: {fileID: 1719460895}
   m_Layer: 5
   m_Name: InventoryParent
-  m_TagString: Inventory
+  m_TagString: Inventory2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4191,7 +4191,7 @@ RectTransform:
   - {fileID: 1125761436}
   - {fileID: 526344086}
   m_Father: {fileID: 935040413}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4410,7 +4410,7 @@ GameObject:
   - component: {fileID: 1753531081}
   m_Layer: 5
   m_Name: InventoryParent (1)
-  m_TagString: Inventory2
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4434,7 +4434,7 @@ RectTransform:
   - {fileID: 274097034}
   - {fileID: 1539426526}
   m_Father: {fileID: 935040413}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

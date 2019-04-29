@@ -25,6 +25,7 @@ public class InventoryUI : MonoBehaviour
         inventory.onItemChangedCallBack += UpdateUI;  // Subscribe to the onItemChanged callback
         slots = new InventorySlot[2][];
 
+
         // Populate our slots array
 
         //call later
