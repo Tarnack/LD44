@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class WalletInfos : MonoBehaviour
 {
-    public int pieceCapacity;
-    public int billetCapacity;
+    public int capacity;
 }

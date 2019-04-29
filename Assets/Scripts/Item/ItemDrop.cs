@@ -16,7 +16,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Zipper")
+        if (other.gameObject.GetComponent<WalletInfos>() != null)
         {
             i++;
         }
@@ -24,7 +24,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Zipper")
+        if (other.gameObject.GetComponent<WalletInfos>() != null)
         {
             if (i > 0)
             i--;
@@ -56,7 +56,7 @@ public class ItemDrop : MonoBehaviour
         bool remove = true;
         if(i ==1)
         {
-            if (other.tag == "Zipper")
+            if (other.gameObject.GetComponent<WalletInfos>() != null)
             {
                 if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
                     remove = Inventory.instance.Add(currency, other.gameObject);

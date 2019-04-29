@@ -6,10 +6,8 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New WalletModule", menuName = "WalletModule")]
 public class WalletModuleSO : ScriptableObject
 {
-    public int pieceCapacityMin;
-    public int pieceCapacityMax;
-    public int billetCapacityMin;
-    public int billetCapacityMax;
+    public int capacityMin;
+    public int capacityMax;
     public GameObject prefab;
 
     public enum CurrencyType

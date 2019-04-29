@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class WalletModule
 {
-    public int pieceCapacity, billetCapacity;
+    public int capacity;
     private bool visibility;
     private GameObject go;
     // Start is called before the first frame update
     public WalletModule(WalletModuleSO so, Vector3 position)
     {
-        pieceCapacity = Random.Range(so.pieceCapacityMin, so.pieceCapacityMax);
-        billetCapacity = Random.Range(so.billetCapacityMin, so.billetCapacityMax);
-        if (pieceCapacity + billetCapacity < 1)
-        {
-            pieceCapacity = 1;
-        }
+        capacity = Random.Range(so.capacityMin, so.capacityMax);
+
         go = MonoBehaviour.Instantiate(so.prefab, position, Quaternion.identity);
         go.AddComponent<WalletInfos>();
-        go.GetComponent<WalletInfos>().pieceCapacity = pieceCapacity;
-        go.GetComponent<WalletInfos>().billetCapacity = billetCapacity;
-        Debug.Log("Capacity :  piece  : "+pieceCapacity+"  billet : "+billetCapacity);
+        go.GetComponent<WalletInfos>().capacity = capacity;
+        Debug.Log("Capacity : "+ capacity);
 
         Inventory inventory;
         inventory = Inventory.instance;

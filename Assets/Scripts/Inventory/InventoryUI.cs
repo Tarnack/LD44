@@ -89,7 +89,7 @@ public class InventoryUI : MonoBehaviour
         // Loop through all the slots
         foreach (GameObject moduleActif in moduleActifs)
         {
-            for (int i = 0; i < slots.Length; i++)
+            for (int i = 0; i < moduleActif.GetComponent<WalletInfos>().capacity; i++)
             {
                 if (i < inventory.dictionary[moduleActif].Count)  // If there is an item to add
                 {

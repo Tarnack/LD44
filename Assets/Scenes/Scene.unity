@@ -1618,7 +1618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zipper: {fileID: 11400000, guid: e57713bf32dfa2c4cbb752817d6ad700, type: 2}
   cardHolder: {fileID: 0}
-  billetHolder: {fileID: 0}
+  billetHolder: {fileID: 11400000, guid: 5c964eabadc2cf149b049c49b508e89b, type: 2}
 --- !u!114 &772834879
 MonoBehaviour:
   m_ObjectHideFlags: 0

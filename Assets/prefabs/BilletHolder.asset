@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d230a320dbee3b74e9f7d22d6f27bf7b, type: 3}
   m_Name: BilletHolder
   m_EditorClassIdentifier: 
-  pieceCapacityMin: 0
-  pieceCapacityMax: 0
-  billetCapacityMin: 1
-  billetCapacityMax: 3
+  capacityMin: 1
+  capacityMax: 3
   prefab: {fileID: 7114160691341097123, guid: 711fdf7f1e78e854db8938d3d87fb891, type: 3}
