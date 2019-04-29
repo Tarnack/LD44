@@ -6,7 +6,8 @@ public class ItemDrop : MonoBehaviour
 {
     public CurrencySO currency;
     private int i;
-   
+
+
 
    
 
@@ -15,12 +16,13 @@ public class ItemDrop : MonoBehaviour
         if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2")
         {
             i++;
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2 ")
+        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2")
         {
             if (i > 0)
             i--;
@@ -64,7 +66,7 @@ public class ItemDrop : MonoBehaviour
 
             if (other.tag == "Inventory")
             {
-
+                Debug.Log("Inv 1 !");
                 if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0]);
                 //if(!remove)
@@ -76,7 +78,7 @@ public class ItemDrop : MonoBehaviour
 
             if (other.tag == "Inventory2")
             {
-
+                Debug.Log("Inv 2 !");
                 if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1]);
                 else
@@ -100,8 +102,6 @@ public class ItemDrop : MonoBehaviour
               remove = false;
               wasDropped = true;          
         }
-
-
         if (wasDropped)
         {
             Destroy(gameObject);
