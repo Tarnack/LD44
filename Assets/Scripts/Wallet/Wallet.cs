@@ -14,8 +14,8 @@ public class Wallet : MonoBehaviour
         float offsetX = -3;
         float offsetY = -3;
         int[][] positions = new int[][] { new int[] { 1, 1 }, new int[] { 1, 2 }, new int[] { 2, 1 }, new int[] { 2, 2 } };
-        int idVisiblePiece = Random.Range(0, 1);
-        int idVisibleBillet = Random.Range(0, 1);
+        int idVisiblePiece = Random.Range(0, 2);
+        int idVisibleBillet = Random.Range(0, 2);
         int cpt = 0;
         modules.Add(new WalletModule(zipper, new Vector3(4 + offsetX, 2 + offsetY)));
         modules.Add(new WalletModule(zipper, new Vector3(2 + offsetX, 0 + offsetY)));
@@ -29,6 +29,7 @@ public class Wallet : MonoBehaviour
             }
             else
                 mod.SetVisible(true);
+            cpt++;
         }
             
         

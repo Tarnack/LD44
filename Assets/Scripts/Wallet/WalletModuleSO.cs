@@ -11,9 +11,4 @@ public class WalletModuleSO : ScriptableObject
     public GameObject prefab;
     public CurrencySO[] content;
     public bool locked;
-
-    public enum CurrencyType
-    {
-        Piece, Billet
-    }
 }
