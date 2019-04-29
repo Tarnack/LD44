@@ -1447,6 +1447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gObjects:
   - {fileID: 1887061812234012735, guid: d6f5d102748b2ea4caf164d4a38786bb, type: 3}
+  - {fileID: 1887061812234012735, guid: d6f5d102748b2ea4caf164d4a38786bb, type: 3}
+  - {fileID: 1887061812234012735, guid: d6f5d102748b2ea4caf164d4a38786bb, type: 3}
   - {fileID: 8269352163505465831, guid: 2b3bd8423b0a3894e91bfae2b00df294, type: 3}
 --- !u!114 &772834878
 MonoBehaviour:
@@ -3231,6 +3233,21 @@ PrefabInstance:
         type: 3}
       propertyPath: isSelected
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269352163505465835, guid: 2b3bd8423b0a3894e91bfae2b00df294,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269352163505465835, guid: 2b3bd8423b0a3894e91bfae2b00df294,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 5.158387
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269352163505465835, guid: 2b3bd8423b0a3894e91bfae2b00df294,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 2.3291936
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3bd8423b0a3894e91bfae2b00df294, type: 3}

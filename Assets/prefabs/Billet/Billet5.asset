@@ -16,5 +16,5 @@ MonoBehaviour:
   taille: 0.75
   icon: {fileID: 21300000, guid: 9853549877e959f49a1a91259b962c82, type: 3}
   type: 1
-  id: 6
+  id: 3
   model: {fileID: -927199367670048503, guid: 09e66137284c299439d9685a4cba44a5, type: 3}
