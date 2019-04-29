@@ -16,6 +16,7 @@ public class EventGestionnaire : MonoBehaviour
     private float timer;
     private EventSO newEvent;
     public int eventPassed;
+    public Text gameOverScore;
    
 
 
@@ -116,6 +117,7 @@ public class EventGestionnaire : MonoBehaviour
 
         }
         eventPassed++;
+        gameOverScore.text = "You survived to " + eventPassed + " events";
         StartNewEvent();
     }
 }
