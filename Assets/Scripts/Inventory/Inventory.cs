@@ -79,7 +79,12 @@ public class Inventory : MonoBehaviour
 
     public void Swap (CurrencySO currency, GameObject module, CurrencySO currency2 , GameObject module2)
     {
-        
+
+        Remove(currency, module);
+        Remove(currency2, module2);
+        Add(currency, module);
+        Add(currency2, module2);
+        /*
         if (currency.type != currency2.type)
         {
             module.GetComponent<DisplayUI>().FadeText("Bad Type Of Currency");
@@ -92,6 +97,7 @@ public class Inventory : MonoBehaviour
 
         if (onItemChangedCallBack != null)
         onItemChangedCallBack.Invoke();
+        */
     }
 
 

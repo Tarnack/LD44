@@ -6,6 +6,7 @@ public class ItemDrop : MonoBehaviour
 {
     public CurrencySO currency;
     private int i;
+    private bool onItem = false;
 
 
 
@@ -51,22 +52,12 @@ public class ItemDrop : MonoBehaviour
         bool wasDropped = false;
         bool remove = true;
 
-        /*if (other.tag == "Currency")
-        {
-            Debug.Log("coucou la famille");
-            Inventory.instance.Swap(currency, other.GetComponent<ItemSlotOrigin>().lastModule, other.GetComponent<ItemDrop>().currency, GetComponent<ItemSlotOrigin>().lastModule);
-            remove = true;
-            wasDropped = true;
-          
-        }*/
-
-        if (i ==1)
+        if (i ==1 && !onItem)
         {
            
 
             if (other.tag == "Inventory")
             {
-                Debug.Log("Inv 1 !");
                 if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0]);
                 //if(!remove)
@@ -78,7 +69,6 @@ public class ItemDrop : MonoBehaviour
 
             if (other.tag == "Inventory2")
             {
-                Debug.Log("Inv 2 !");
                 if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1]);
                 else
