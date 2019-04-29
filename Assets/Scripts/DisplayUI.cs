@@ -42,6 +42,10 @@ public class DisplayUI : MonoBehaviour
         {
             GetComponentsInChildren<SpriteRenderer>()[1].enabled = false;
         }
+        if (GetComponentsInChildren<SpriteRenderer>()[0].enabled == true)
+        {
+            GetComponentsInChildren<SpriteRenderer>()[0].color = invUI.itemsParents[index-1].GetComponentInChildren<RawImage>().color;
+        }
     }
 
     private void OnMouseDown()
