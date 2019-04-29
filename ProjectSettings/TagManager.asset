@@ -8,6 +8,8 @@ TagManager:
   - Zipper
   - BackGround
   - Inventory
+  - InventoryUI
+  - Inventory2
   layers:
   - Default
   - TransparentFX

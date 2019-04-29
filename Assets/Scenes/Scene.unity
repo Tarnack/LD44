@@ -508,7 +508,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264817068}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &264817070
 Camera:
   m_ObjectHideFlags: 0
@@ -634,17 +634,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
       propertyPath: currency
       value: 
       objectReference: {fileID: 11400000, guid: e77a059b0e927644289325b7218bd9d6,
         type: 2}
-    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
-        type: 3}
-      propertyPath: isSelected
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
 --- !u!1 &274097033
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 617703943}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: InventoryUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1678,17 +1678,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
       propertyPath: currency
       value: 
       objectReference: {fileID: 11400000, guid: 5f5a47891a7d7134caacef71b0cd35ac,
         type: 2}
-    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
-        type: 3}
-      propertyPath: isSelected
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
 --- !u!1001 &812802662
@@ -2174,12 +2174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
-        type: 3}
-      propertyPath: currency
-      value: 
-      objectReference: {fileID: 11400000, guid: 55580edb00547914faabe1d4e6450224,
-        type: 2}
     - target: {fileID: 8342943381933709663, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
       propertyPath: m_Size.x
@@ -2205,6 +2199,12 @@ PrefabInstance:
       propertyPath: isSelected
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: currency
+      value: 
+      objectReference: {fileID: 11400000, guid: 55580edb00547914faabe1d4e6450224,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
 --- !u!1 &1026661695
@@ -4410,7 +4410,7 @@ GameObject:
   - component: {fileID: 1753531081}
   m_Layer: 5
   m_Name: InventoryParent (1)
-  m_TagString: Inventory
+  m_TagString: Inventory2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4820,16 +4820,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
       propertyPath: currency
       value: 
       objectReference: {fileID: 11400000, guid: f19567ad47236d840b51b72e28cbb545,
         type: 2}
-    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
-        type: 3}
-      propertyPath: isSelected
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}

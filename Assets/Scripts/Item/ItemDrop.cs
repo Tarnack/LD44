@@ -16,7 +16,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<WalletInfos>() != null)
+        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2" )
         {
             i++;
         }
@@ -24,7 +24,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<WalletInfos>() != null)
+        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2" )
         {
             if (i > 0)
             i--;
@@ -55,20 +55,34 @@ public class ItemDrop : MonoBehaviour
         bool wasDropped = false;
         bool remove = true;
 
-        if(other.tag == "Inventory")
+
+
+        if (i ==1)
         {
-           
-                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
-                    remove = Inventory.instance.Add(currency, (GameObject)other.GetComponentInParent<InventoryUI>().moduleActifs[0]);
+
+
+            if (other.tag == "Inventory")
+            {
+
+                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0])
+                    remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0]);
                 else
                     remove = false;
                 wasDropped = true;
 
-        }
+            }
 
+            if (other.tag == "Inventory2")
+            {
 
-        if(i ==1)
-        {
+                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1])
+                    remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1]);
+                else
+                    remove = false;
+                wasDropped = true;
+
+            }
+
             if (other.gameObject.GetComponent<WalletInfos>() != null)
             {
                 if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
