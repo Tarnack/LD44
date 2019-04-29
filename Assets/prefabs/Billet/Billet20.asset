@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Billet20
   m_EditorClassIdentifier: 
   value: 20
-  taille: 1.25
+  taille: 0.5
   icon: {fileID: 0}
   type: 1
   id: 0
