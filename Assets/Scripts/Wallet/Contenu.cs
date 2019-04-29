@@ -36,16 +36,16 @@ public class Contenu
             if (possessions.dic[currency] > 0)
             {
                 Contenu newContenu = new Contenu();
+                float newValue = value - currency.value;
                 newContenu.dic = new Dictionary<CurrencySO, int>(possessions.dic);
                 newContenu.dic[currency]--;
                 try
                 {
-                    Debug.Log("Da Way");
-                    List<CurrencySO> paiment = Payer(value - currency.value, newContenu);
+ 
+                    List<CurrencySO> paiment = Payer(newValue, newContenu);
                     paiment.Add (currency);
-
-                    float val;
-                    if (possibility.ContainsKey(val = GetValeur(paiment)))
+                    float val = value - GetValeur(paiment);
+                    if (possibility.ContainsKey(val))
                     {
                         if (possibility[val].Count < paiment.Count)
                         {
@@ -59,12 +59,14 @@ public class Contenu
                 }
                 catch (System.Exception e)
                 {
-                    Debug.Log(e.StackTrace);
+                    Debug.Log(e.Message);
                 }
             }
         }
-        if(possibility.Count ==0 )
+        if(possibility.Keys.Count == 0)
+        {
             throw new System.Exception("Not enough money");
+        }
         float best = float.NegativeInfinity;
         List<CurrencySO> bestList = null;
         foreach(float f in possibility.Keys)
@@ -84,7 +86,7 @@ public class Contenu
         {
             val += curr.value;
         }
-        return 0;
+        return val;
     }
 
 
