@@ -4296,7 +4296,7 @@ GameObject:
   - component: {fileID: 1729403336}
   - component: {fileID: 1729403335}
   m_Layer: 5
-  m_Name: 'TextTotalMoney :'
+  m_Name: TextTotalMoney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
