@@ -10,8 +10,7 @@ public class EventGestionnaire : MonoBehaviour
     void Start()
     {
         gameObject.AddComponent<AudioSource>();
-
-        startNewEvent();
+        
     }
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class EventGestionnaire : MonoBehaviour
     public void startNewEvent()
     {
         int numEvent = Random.Range(0, listEvent.Length);
-        numEvent = 2;
+
         EventSO newEvent = listEvent[numEvent];
         gameObject.GetComponent<AudioSource>().clip = newEvent.soundTrack;
         gameObject.GetComponent<AudioSource>().loop = true;
