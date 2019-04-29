@@ -39,15 +39,10 @@ public class DisplayUI : MonoBehaviour
         {
             Cursor.visible = false;
         }
-        if(!GetComponent<WalletInfos>().visible)
-        {
-            GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
-        }
-        else
-        {
-            GetComponentsInChildren<SpriteRenderer>()[1].enabled = false;
-        }
-        if (GetComponentsInChildren<SpriteRenderer>()[0].enabled == true)
+      
+        GetComponentsInChildren<SpriteRenderer>()[1].enabled = !GetComponent<WalletInfos>().visible;
+
+        if (GetComponentsInChildren<SpriteRenderer>()[0].enabled)
         {
             GetComponentsInChildren<SpriteRenderer>()[0].color = invUI.itemsParents[index-1].GetComponentInChildren<RawImage>().color;
         }

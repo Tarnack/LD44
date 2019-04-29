@@ -6,7 +6,7 @@ public class EventSO : ScriptableObject
 {
     public string eventName;
     public string description;
-    public Canvas environnement;
+    public Sprite environnement;
     public float cost;
     public float frustBaisse;
     public float frustAugment;
