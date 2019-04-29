@@ -4145,9 +4145,10 @@ GameObject:
   - component: {fileID: 1719460892}
   - component: {fileID: 1719460894}
   - component: {fileID: 1719460893}
+  - component: {fileID: 1719460895}
   m_Layer: 5
   m_Name: InventoryParent
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4215,6 +4216,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719460891}
   m_CullTransparentMesh: 0
+--- !u!65 &1719460895
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719460891}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 226.1572, y: 154.25732, z: 0.5751345}
+  m_Center: {x: -1.0237098, y: 35.961815, z: 0.21243274}
 --- !u!1001 &1725081761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4374,9 +4388,10 @@ GameObject:
   - component: {fileID: 1753531078}
   - component: {fileID: 1753531080}
   - component: {fileID: 1753531079}
+  - component: {fileID: 1753531081}
   m_Layer: 5
   m_Name: InventoryParent (1)
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4444,6 +4459,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753531077}
   m_CullTransparentMesh: 0
+--- !u!65 &1753531081
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753531077}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 224.29543, y: 148.87747, z: 1}
+  m_Center: {x: -2.5556982, y: 24.19805, z: 0}
 --- !u!1 &2006353005
 GameObject:
   m_ObjectHideFlags: 0
