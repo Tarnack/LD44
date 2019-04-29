@@ -17,9 +17,13 @@ public class DisplayUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         myText = GameObject.FindGameObjectWithTag("Text").GetComponent<Text>();
-        invUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
+        invUI = GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>();
+
         myText.color = Color.clear;
+
+       
         index = 0;
         
         

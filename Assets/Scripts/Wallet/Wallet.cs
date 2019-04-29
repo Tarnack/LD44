@@ -12,6 +12,7 @@ public class Wallet : MonoBehaviour
     public CurrencySO[] startingCurrencies;
     void Start()
     {
+        Debug.Log("!");
         float offsetX = -3;
         float offsetY = -2.5f;
         int[][] positions = new int[][] { new int[] { 1, 1 }, new int[] { 1, 2 }, new int[] { 2, 1 }, new int[] { 2, 2 } };
@@ -35,8 +36,11 @@ public class Wallet : MonoBehaviour
 
         foreach (CurrencySO currency in startingCurrencies)
             Debug.Log(Inventory.instance.AddCurrency(currency));
-            
-        
+
+
+        List<CurrencySO> c;
+        Debug.Log(c = Contenu.Payer(18.5f, Inventory.instance.GetContenuTotal()));
+        Debug.Log(c[0]);
     }
 
     // Update is called once per frame
