@@ -12,6 +12,7 @@ public class EventGestionnaire : MonoBehaviour
     public Slider frustration;
     public Slider sliderTimer;
     public Image background;
+    public AudioClip cling;
     private float timerInit;
     private float timer;
     private EventSO newEvent;
@@ -113,6 +114,9 @@ public class EventGestionnaire : MonoBehaviour
             {
                 frustration.value = 0;
             }
+
+            gameObject.GetComponent<AudioSource>().clip = cling;
+            gameObject.GetComponent<AudioSource>().Play();
 
 
         }
