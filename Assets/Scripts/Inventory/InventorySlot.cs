@@ -33,7 +33,9 @@ public class InventorySlot : MonoBehaviour
         temporary = GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(GetComponent<Transform>().position, currency.model, currency.taille);
         temporary.GetComponent<ItemSlotOrigin>().lastModule = (GameObject)GetComponentInParent<InventoryUI>().moduleActifs[invUI.Index(this)];
         temporary.GetComponent<ItemDrop>().currency = currency;
-      
+        temporary.GetComponent<BoxCollider>().size = new Vector3(temporary.GetComponentInChildren<MeshRenderer>().bounds.size.x, temporary.GetComponentInChildren<MeshRenderer>().bounds.size.y,2.5f);
+
+
     }
 
     // Clear the slot

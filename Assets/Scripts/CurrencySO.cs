@@ -11,6 +11,7 @@ public class CurrencySO: ScriptableObject
     public CurrencyType type;
     public int id;
 	public GameObject model;
+    public BoxCollider collider;
 
     public enum CurrencyType
     {
