@@ -51,6 +51,16 @@ public class Inventory : MonoBehaviour
 
     public bool Add (CurrencySO currency, GameObject module)
     {
+        bool contentOK = false;
+
+        foreach (CurrencySO possibleContent in module.GetComponent<WalletInfos>().so.content)
+            contentOK |= currency.id == possibleContent.id;
+        if (!contentOK)
+        {
+            Debug.Log("Ba type of content");
+            return false;
+        }
+
         if (dictionary[module].Count >= module.GetComponent<WalletInfos>().capacity )
         {
             Debug.Log("Not enough room");

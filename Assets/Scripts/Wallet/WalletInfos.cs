@@ -5,4 +5,5 @@ using UnityEngine;
 public class WalletInfos : MonoBehaviour
 {
     public int capacity;
+    public WalletModuleSO so;
 }

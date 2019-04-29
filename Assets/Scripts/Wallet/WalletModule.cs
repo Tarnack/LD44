@@ -15,6 +15,7 @@ public class WalletModule
         go = MonoBehaviour.Instantiate(so.prefab, position, Quaternion.identity);
         go.AddComponent<WalletInfos>();
         go.GetComponent<WalletInfos>().capacity = capacity;
+        go.GetComponent<WalletInfos>().so = so;
         Debug.Log("Capacity : "+ capacity);
 
         Inventory inventory;

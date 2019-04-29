@@ -9,6 +9,7 @@ public class WalletModuleSO : ScriptableObject
     public int capacityMin;
     public int capacityMax;
     public GameObject prefab;
+    public CurrencySO[] content;
 
     public enum CurrencyType
     {

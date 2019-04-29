@@ -15,3 +15,7 @@ MonoBehaviour:
   capacityMin: 3
   capacityMax: 6
   prefab: {fileID: 7530629179597789228, guid: e4844be828f9c92408538a8597b29054, type: 3}
+  content:
+  - {fileID: 11400000, guid: 1e222081c67f80840949a47915db036b, type: 2}
+  - {fileID: 11400000, guid: d528ae2deacd98f479efd7bb107ee29a, type: 2}
+  - {fileID: 11400000, guid: e77a059b0e927644289325b7218bd9d6, type: 2}
