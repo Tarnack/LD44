@@ -28,6 +28,7 @@ public class WalletModule
     public void SetVisible(bool visibility)
     {
         this.visibility = visibility;
+        go.GetComponent<WalletInfos>().visible = visibility;
     }
 
 }
