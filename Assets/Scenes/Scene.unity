@@ -2098,7 +2098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalMoney: {fileID: 1729403335}
-  visibleMoney: {fileID: 0}
+  visibleMoney: {fileID: 1244960173}
 --- !u!222 &935040416
 CanvasRenderer:
   m_ObjectHideFlags: 0
