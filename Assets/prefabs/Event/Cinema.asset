@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Cinema
   m_EditorClassIdentifier: 
   eventName: Cinema
-  description: blublu
-  environnement: {fileID: 21300000, guid: bd7273fec7916a44fb7ae116632b42de, type: 3}
+  description: 'Watching Avengers : End Game for the 10th time'
+  environnement: {fileID: 21300000, guid: a7d03f5f4e956d640882e66601ff785c, type: 3}
   cost: 5
   frustBaisse: 10
   frustAugment: 10
-  timer: 20
-  soundTrack: {fileID: 8300000, guid: 8516910e8ab5f764e8f31e37f5bd357d, type: 3}
+  timer: 10
+  soundTrack: {fileID: 8300000, guid: 51be7ee06c0cebd4d81c894ed848128a, type: 3}

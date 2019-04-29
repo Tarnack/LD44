@@ -8,12 +8,14 @@ public class EventGestionnaire : MonoBehaviour
 
     public EventSO[] listEvent;
     public Text desc;
+    public Text prix;
     public Slider frustration;
     public Slider sliderTimer;
     public Image background;
     private float timerInit;
     private float timer;
     private EventSO newEvent;
+    public int eventPassed;
    
 
 
@@ -49,6 +51,8 @@ public class EventGestionnaire : MonoBehaviour
         gameObject.GetComponent<AudioSource>().loop = true;
         gameObject.GetComponent<AudioSource>().Play();
         desc.text = newEvent.description;
+        prix.text = "Will cost you : ";
+        prix.text += newEvent.cost;
         background.sprite = newEvent.environnement;
         timerInit = newEvent.timer;
         timer = 0;
@@ -111,7 +115,7 @@ public class EventGestionnaire : MonoBehaviour
 
 
         }
-
+        eventPassed++;
         StartNewEvent();
     }
 }

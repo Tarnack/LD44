@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Restorant
   m_EditorClassIdentifier: 
   eventName: Restorant
-  description: Little dinner to the restoeant
-  environnement: {fileID: 0}
+  description: Little dinner to the restorant
+  environnement: {fileID: 21300000, guid: f41fb9b851d57174e8eafe6bcc0530c2, type: 3}
   cost: 20
   frustBaisse: 50
   frustAugment: 20
-  timer: 20
-  soundTrack: {fileID: 8300000, guid: 404599773b42d8841b446e286a4a97c8, type: 3}
+  timer: 9
+  soundTrack: {fileID: 8300000, guid: 28ff141606e43a84a81088a17456a358, type: 3}
