@@ -57,13 +57,13 @@ public class Inventory : MonoBehaviour
             contentOK |= currency.id == possibleContent.id;
         if (!contentOK)
         {
-            if (log) Debug.Log("Bad type of content");
+            module.GetComponent<DisplayUI>().FadeText("Bad Type Of Currency");
             return false;
         }
 
         if (dictionary[module].Count >= module.GetComponent<WalletInfos>().capacity )
         {
-            if (log) Debug.Log("Not enough room");
+            module.GetComponent<DisplayUI>().FadeText("Not enough Room");
             return false;
         }
         dictionary[module].Add(currency);

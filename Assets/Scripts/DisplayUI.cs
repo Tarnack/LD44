@@ -17,9 +17,9 @@ public class DisplayUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //myText = GameObject.Find("Text").GetComponent<Text>();
+        myText = GameObject.FindGameObjectWithTag("Text").GetComponent<Text>();
         invUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
-        //myText.color = Color.clear;
+        myText.color = Color.clear;
         index = 0;
         
         
@@ -28,9 +28,9 @@ public class DisplayUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //FadeText ();
+        myText.color = Color.Lerp(myText.color, Color.clear, fadeTime * Time.deltaTime);
 
-        if(Input.GetKeyDown (KeyCode.Escape))
+        if (Input.GetKeyDown (KeyCode.Escape))
         {
             Cursor.visible = false;
         }
@@ -96,20 +96,18 @@ public class DisplayUI : MonoBehaviour
         }
         
     }
-    /*
-    void FadeText()
+    
+    public void FadeText(string myString)
     {
 
-        if(displayInfo)
+
+        //myText.text = myString;
+        if (myText != null)
         {
             myText.text = myString;
-            myText.color = Color.Lerp(myText.color, Color.white, fadeTime * Time.deltaTime);
+            myText.color = Color.white;
         }
 
-        else
-        {
-            myText.color = Color.Lerp(myText.color, Color.clear, fadeTime * Time.deltaTime);
-        }
     }
-    */
+    
 }

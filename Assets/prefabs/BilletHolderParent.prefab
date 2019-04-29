@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myString: lol
   myText: {fileID: 0}
-  fadeTime: 0
+  fadeTime: 0.5
   displayInfo: 0
   invUI: {fileID: 0}
 --- !u!1001 &7309942979459140648
