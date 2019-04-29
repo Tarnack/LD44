@@ -13,7 +13,7 @@ public class Wallet : MonoBehaviour
     void Start()
     {
         float offsetX = -3;
-        float offsetY = -3;
+        float offsetY = -2.5f;
         int[][] positions = new int[][] { new int[] { 1, 1 }, new int[] { 1, 2 }, new int[] { 2, 1 }, new int[] { 2, 2 } };
         int idVisiblePiece = Random.Range(0, 2);
         int idVisibleBillet = Random.Range(0, 2);
