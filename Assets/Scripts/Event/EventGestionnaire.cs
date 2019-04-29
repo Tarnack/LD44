@@ -44,6 +44,8 @@ public class EventGestionnaire : MonoBehaviour
         try
         {
             Contenu.Payer(newEvent.cost, Inventory.instance.GetContenuVisible());
+
+
             if (1-frustration.value <= newEvent.frustBaisse / 100)
             {
                 List<WalletInfos> modules = new List<WalletInfos>();

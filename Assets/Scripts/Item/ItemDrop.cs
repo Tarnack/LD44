@@ -37,9 +37,7 @@ public class ItemDrop : MonoBehaviour
         if (!gameObject.GetComponent<DragAndDrop>().isSelected)
         {
             DropItem(other);
-           
-            
-            
+                                
         }
 
     }
@@ -64,7 +62,7 @@ public class ItemDrop : MonoBehaviour
             if (other.tag == "Inventory")
             {
 
-                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0])
+                if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0]);
                 else
                     remove = false;
@@ -75,7 +73,7 @@ public class ItemDrop : MonoBehaviour
             if (other.tag == "Inventory2")
             {
 
-                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1])
+                if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[1]);
                 else
                     remove = false;
@@ -85,7 +83,7 @@ public class ItemDrop : MonoBehaviour
 
             if (other.gameObject.GetComponent<WalletInfos>() != null)
             {
-                if (GetComponent<ItemSlotOrigin>().lastModule == null || GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
+                if (GetComponent<ItemSlotOrigin>().lastModule.GetComponent<Collider>() != other)
                     remove = Inventory.instance.Add(currency, other.gameObject);
                 else
                     remove = false;
@@ -95,11 +93,10 @@ public class ItemDrop : MonoBehaviour
 
         else
         {
-            if (GetComponent<ItemSlotOrigin>().lastModule != null)
-            {
-                remove = false;
-                wasDropped = true;
-            }
+            
+              remove = false;
+              wasDropped = true;
+            
         }
 
 
