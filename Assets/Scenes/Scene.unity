@@ -1616,7 +1616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bdea705d22e284fbfcaed4c1a90a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultModule: {fileID: 11400000, guid: 5741083cc020405458fef94b6d8b1c6d, type: 2}
+  zipper: {fileID: 11400000, guid: e57713bf32dfa2c4cbb752817d6ad700, type: 2}
+  cardHolder: {fileID: 0}
+  billetHolder: {fileID: 0}
 --- !u!114 &772834879
 MonoBehaviour:
   m_ObjectHideFlags: 0

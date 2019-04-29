@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Contenu
+public class Contenu : MonoBehaviour
 {
     private Dictionary<CurrencySO, int> dic = new Dictionary<CurrencySO, int>();
     
 
-    public void AddCurr(CurrencySO curr)
-    {
-        if (dic.ContainsKey(curr))
-            dic[curr]++;
-        else
-            dic[curr] =  1;
-    }
-
-    public float GetValue()
+    public float getValue()
     {
         float somme = 0;
         foreach (CurrencySO curren in dic.Keys)
+<<<<<<< HEAD
             somme += curren.value * dic[curren];
-
+=======
+            somme += curren.value * dic[curren] ;
+>>>>>>> e8f8a9aa0c59a78982c16e6487e817ef02ce001f
         return somme;
     }
 

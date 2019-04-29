@@ -25,7 +25,6 @@ public class InventorySlot : MonoBehaviour
        
         currency = newCurrency;
 
-        icon.sprite = currency.icon;
         icon.enabled = true;
         //removeButton.interactable = true;
         if (temporary != null) Destroy(temporary);

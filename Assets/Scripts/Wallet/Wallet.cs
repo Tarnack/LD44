@@ -5,25 +5,29 @@ using UnityEngine;
 public class Wallet : MonoBehaviour
 {
     private WalletModule[,] modules;
-    public WalletModuleSO defaultModule;
+    public WalletModuleSO zipper;
+    public WalletModuleSO cardHolder;
+    public WalletModuleSO billetHolder;
     // Start is called before the first frame update
     void Start()
     {
-        float offsetX = -2;
-        float offsetY = -2;
-        modules = new WalletModule[4,4];
+        float offsetX = -3;
+        float offsetY = -3;
+        List<WalletModule> modules = new List<WalletModule>();
         int[][] positions = new int[][] { new int[] { 1, 1 }, new int[] { 1, 2 }, new int[] { 2, 1 }, new int[] { 2, 2 } };
         int idVisible = Random.Range(0, 3);
         int idCourant = 0;
-        foreach (int[] pos in positions)
+        modules.Add(new WalletModule(zipper, new Vector3(0 + offsetX, 0 + offsetY)));
+        modules.Add(new WalletModule(zipper, new Vector3(2 + offsetX, 0 + offsetY)));
+        modules.Add(new WalletModule(billetHolder, new Vector3(1 + offsetX, 2 + offsetY)));
+        foreach (WalletModule mod in modules)
         {
-            modules[pos[0], pos[1]] = new WalletModule(defaultModule, new Vector3(pos[0] * 2 + offsetX, pos[1] * 2 + offsetY));
             if (idCourant == idVisible)
             {
-                modules[pos[0], pos[1]].SetVisible(true);
+                mod.SetVisible(true);
             }
             else {
-                modules[pos[0], pos[1]].SetVisible(false);
+                mod.SetVisible(false);
             }
         }
             

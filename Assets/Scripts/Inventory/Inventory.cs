@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour
         if(onItemChangedCallBack != null)
         onItemChangedCallBack.Invoke();
 
+
         return true;
     }
     public void Remove (CurrencySO currency, GameObject module)
@@ -70,6 +71,19 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallBack != null)
             onItemChangedCallBack.Invoke();
     }
+
+    public Contenu GetContenuTotal()
+    {
+        Contenu contenu = new Contenu();
+        foreach(List<CurrencySO> listSO in dictionary.Values)
+        {
+            foreach(CurrencySO so in listSO)
+                contenu.AddCurr(so);
+        }
+
+        return contenu;
+    }
+
 
 
 }
