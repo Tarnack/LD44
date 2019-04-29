@@ -16,7 +16,6 @@ public class WalletModule
         go.AddComponent<WalletInfos>();
         go.GetComponent<WalletInfos>().capacity = capacity;
         go.GetComponent<WalletInfos>().so = so;
-        Debug.Log("Capacity : "+ capacity);
 
         Inventory inventory;
         inventory = Inventory.instance;
@@ -29,7 +28,6 @@ public class WalletModule
     {
         this.visibility = visibility;
         go.GetComponent<WalletInfos>().visible = visibility;
-        Debug.Log("set Visible : " + visibility);
     }
 
 }

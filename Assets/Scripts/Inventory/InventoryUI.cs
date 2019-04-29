@@ -103,7 +103,7 @@ public class InventoryUI : MonoBehaviour
 
             index++;
         }
-        Inventory.instance.totalMoney.text = "Total Money : " + Inventory.instance.GetContenuTotal().GetValue();
+        Inventory.instance.UpdateContenu();
     }
 
 

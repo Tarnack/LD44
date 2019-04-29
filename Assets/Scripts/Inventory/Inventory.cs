@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     [SerializeField]
     public Dictionary<GameObject, List<CurrencySO>> dictionary;
-    public Text totalMoney;
+    public Text totalMoney, visibleMoney;
 
     // Start is called before the first frame update
     void Awake()
@@ -42,7 +42,6 @@ public class Inventory : MonoBehaviour
     {
     
        dictionary.Add(go, new List<CurrencySO>());
-        Debug.Log(dictionary.ToString());
     }
 
     public delegate void OnItemChanged();
@@ -83,18 +82,24 @@ public class Inventory : MonoBehaviour
             onItemChangedCallBack.Invoke();
     }
 
-    public Contenu GetContenuTotal()
+    public void UpdateContenu()
     {
-        Contenu contenu = new Contenu();
-        foreach(List<CurrencySO> listSO in dictionary.Values)
+        Contenu contenuTotal = new Contenu();
+        Contenu contenuVisible = new Contenu();
+        foreach (GameObject module in dictionary.Keys)
         {
-            foreach(CurrencySO so in listSO)
-                contenu.AddCurr(so);
+            foreach(CurrencySO so in dictionary[module])
+            {
+                contenuTotal.AddCurr(so);
+                if (module.GetComponent<WalletInfos>().visible)
+                {
+                    contenuVisible.AddCurr(so);
+                }
+            }
         }
-
-        return contenu;
+        totalMoney.text = "Total money : " + contenuTotal.GetValue();
+        visibleMoney.text = "Visible money : " + contenuVisible.GetValue();
     }
-
 
 
 }
