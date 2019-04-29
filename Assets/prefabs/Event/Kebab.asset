@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Kebab
   description: Detour to eat a kebab
-  environnement: {fileID: 21300000, guid: 5ec358d66a4fbe245a52f3e06d81eb2d, type: 3}
+  environnement: {fileID: 21300000, guid: 9ba0110a99a177e468844b62fcf4b578, type: 3}
   cost: 5
   frustBaisse: 20
   frustAugment: 10
   timer: 7
-  soundTrack: {fileID: 8300000, guid: 6f28fc25eb58d9047b525356ee3cc686, type: 3}
+  soundTrack: {fileID: 8300000, guid: dd65453f7729dec429ac9d95db22a7ba, type: 3}
