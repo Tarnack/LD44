@@ -18,4 +18,5 @@ MonoBehaviour:
   cost: 10
   frustBaisse: 20
   frustAugment: 30
+  timer: 20
   soundTrack: {fileID: 8300000, guid: 00bed8b313eb9e64d9d4667892fc1c76, type: 3}

@@ -6,11 +6,7 @@ public class ItemDrop : MonoBehaviour
 {
     public CurrencySO currency;
     private int i;
-
-    private void Update()
-    {
-        
-    }
+   
 
    
 
