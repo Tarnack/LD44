@@ -86,6 +86,7 @@ public class Inventory : MonoBehaviour
     {
         totalMoney.text = "Total money : " + GetContenuTotal().GetValue();
         visibleMoney.text = "Visible money : " + GetContenuVisible().GetValue();
+
     }
 
     public Contenu GetContenuVisible()

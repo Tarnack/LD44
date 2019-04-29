@@ -26,33 +26,64 @@ public class Contenu
 
 
 
-    public static List<CurrencySO> payer(float value, Contenu possessions)
+    public static List<CurrencySO> Payer(float value, Contenu possessions)
     {
         if (value <= 0)
             return new List<CurrencySO>();
-
-        else
+        Dictionary<float, List<CurrencySO>> possibility = new Dictionary<float, List<CurrencySO>>();
+        foreach (CurrencySO currency in possessions.dic.Keys)
         {
-            bool currFound = false;
-            Dictionary<float, List<CurrencySO>> possibility = new Dictionary<float, List<CurrencySO>>();
-            foreach (CurrencySO currency in possessions.dic.Keys)
+            if (possessions.dic[currency] > 0)
             {
-                if (possessions.dic[currency] > 0)
+                Contenu newContenu = new Contenu();
+                newContenu.dic = new Dictionary<CurrencySO, int>(possessions.dic);
+                newContenu.dic[currency]--;
+                try
                 {
-                    currFound = true;
-                    Contenu newContenu = new Contenu();
-                    newContenu.dic = new Dictionary<CurrencySO, int>(possessions.dic);
-                    newContenu.dic[currency]--;
-                    List<CurrencySO> paiment = payer(value - currency.value, newContenu);
+                    Debug.Log("Da Way");
+                    List<CurrencySO> paiment = Payer(value - currency.value, newContenu);
+                    paiment.Add (currency);
 
+                    float val;
+                    if (possibility.ContainsKey(val = GetValeur(paiment)))
+                    {
+                        if (possibility[val].Count < paiment.Count)
+                        {
+                            possibility[val] = paiment;
+                        }
+                    }
+                    else
+                    {
+                        possibility.Add(val, paiment);
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Debug.Log(e.StackTrace);
                 }
             }
         }
-        return new List<CurrencySO>();
+        if(possibility.Count ==0 )
+            throw new System.Exception("Not enough money");
+        float best = float.NegativeInfinity;
+        List<CurrencySO> bestList = null;
+        foreach(float f in possibility.Keys)
+        {
+            if (f > best){
+                best = f;
+                bestList = possibility[f];
+            }
+        }
+        return bestList;
     }
 
 
-    private static float getValeur(List<CurrencySO> paiment){
+    private static float GetValeur(List<CurrencySO> paiment){
+        float val = 0;
+        foreach (CurrencySO curr in paiment)
+        {
+            val += curr.value;
+        }
         return 0;
     }
 
