@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Contenu
 {
+    public CurrencySO[] listeMonnaieDispo;
     private Dictionary<CurrencySO, int> dic = new Dictionary<CurrencySO, int>();
 
 
@@ -89,6 +90,35 @@ public class Contenu
         return val;
     }
 
+    public static List<CurrencySO> RendreMonnaie(float value)
+    {
+        if (value == 0)
+            return new List<CurrencySO>();
+        List<CurrencySO> best = null;
+        foreach (CurrencySO currency in GameObject.FindObjectOfType<CurrencyList>().GetComponent<CurrencyList>().listCurrency)
+        {
+            if (currency.value <= value)
+            {
+                try
+                {
+                    List<CurrencySO> newSolution = RendreMonnaie(value - currency.value);
+                    newSolution.Add(currency);
+                    if (newSolution.Count < best.Count)
+                        best = newSolution;
+                }
+                catch
+                {
+
+                }
+                
+            }
+        }
+        if(best == null)
+        {
+            throw new System.Exception("Not the necessary currency to make change");
+        }
+        return best;
+    }
 
 
 }

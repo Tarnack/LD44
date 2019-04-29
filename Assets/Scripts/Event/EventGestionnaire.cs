@@ -43,9 +43,24 @@ public class EventGestionnaire : MonoBehaviour
 
         try
         {
-            Contenu.Payer(newEvent.cost, Inventory.instance.GetContenuVisible());
+            float aPayer = newEvent.cost;
+            List<CurrencySO> aRetirer =  Contenu.Payer(aPayer, Inventory.instance.GetContenuVisible());
+            foreach (CurrencySO currencyARetirer in aRetirer)
+            {
+                Inventory.instance.RemoveCurrency(currencyARetirer);
+                aPayer -= currencyARetirer.value;
 
+            }
+            if(aPayer < 0)
+            {
+                Debug.Log("Rendu : " + -aPayer);
+                List<CurrencySO> aRendre = Contenu.RendreMonnaie(-aPayer);
+                foreach (CurrencySO currencyARetirer in aRendre)
+                {
+                    Inventory.instance.AddCurrency(currencyARetirer);
 
+                }
+            }
             if (1-frustration.value <= newEvent.frustBaisse / 100)
             {
                 List<WalletInfos> modules = new List<WalletInfos>();
@@ -69,7 +84,7 @@ public class EventGestionnaire : MonoBehaviour
             }
                 
         }
-        catch (System.Exception e)
+        catch
         {
             if(frustration.value > newEvent.frustBaisse / 100)
             frustration.value -= newEvent.frustBaisse / 100;
@@ -78,7 +93,6 @@ public class EventGestionnaire : MonoBehaviour
                 frustration.value = 0;
             }
            
-
             
         }
        

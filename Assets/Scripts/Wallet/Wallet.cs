@@ -35,12 +35,6 @@ public class Wallet : MonoBehaviour
 
         foreach (CurrencySO currency in startingCurrencies)
             Inventory.instance.AddCurrency(currency);
-
-
-        List<CurrencySO> c;
-        Debug.Log(c = Contenu.Payer(9001f, Inventory.instance.GetContenuTotal()));
-        foreach(CurrencySO cur in c)
-            Debug.Log(cur);
     }
 
     // Update is called once per frame

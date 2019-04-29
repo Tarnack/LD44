@@ -57,12 +57,14 @@ public class Inventory : MonoBehaviour
             contentOK |= currency.id == possibleContent.id;
         if (!contentOK)
         {
+            if(log)
             module.GetComponent<DisplayUI>().FadeText("Bad Type Of Currency");
             return false;
         }
 
         if (dictionary[module].Count >= module.GetComponent<WalletInfos>().capacity )
         {
+            if(log)
             module.GetComponent<DisplayUI>().FadeText("Not enough Room");
             return false;
         }
@@ -74,6 +76,25 @@ public class Inventory : MonoBehaviour
 
         return true;
     }
+
+    public void Swap (CurrencySO currency, GameObject module, CurrencySO currency2 , GameObject module2)
+    {
+        
+        if (currency.type != currency2.type)
+        {
+            module.GetComponent<DisplayUI>().FadeText("Bad Type Of Currency");
+            return;
+        }
+        
+        dictionary[module].Add(currency);
+        dictionary[module2].Add(currency2);
+     
+
+        if (onItemChangedCallBack != null)
+        onItemChangedCallBack.Invoke();
+    }
+
+
     public void Remove (CurrencySO currency, GameObject module)
     {
         dictionary[module].Remove(currency);
@@ -133,5 +154,19 @@ public class Inventory : MonoBehaviour
             }
         }
         return added;
+    }
+
+    public void RemoveCurrency(CurrencySO so)
+    {
+        bool removed = false;
+        foreach (GameObject goModule in dictionary.Keys)
+        {
+            if (goModule.GetComponent<WalletInfos>().visible && dictionary[goModule].Contains(so) && !removed)
+            {
+
+                Remove(so, goModule);
+                removed = true; 
+            }
+        }
     }
 }

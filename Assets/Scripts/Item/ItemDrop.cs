@@ -16,7 +16,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2" )
+        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2")
         {
             i++;
         }
@@ -24,7 +24,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2" )
+        if (other.gameObject.GetComponent<WalletInfos>() != null || other.tag == "Inventory" || other.tag == "Inventory2 ")
         {
             if (i > 0)
             i--;
@@ -53,11 +53,18 @@ public class ItemDrop : MonoBehaviour
         bool wasDropped = false;
         bool remove = true;
 
-
+        /*if (other.tag == "Currency")
+        {
+            Debug.Log("coucou la famille");
+            Inventory.instance.Swap(currency, other.GetComponent<ItemSlotOrigin>().lastModule, other.GetComponent<ItemDrop>().currency, GetComponent<ItemSlotOrigin>().lastModule);
+            remove = true;
+            wasDropped = true;
+          
+        }*/
 
         if (i ==1)
         {
-      
+           
 
             if (other.tag == "Inventory")
             {
@@ -93,11 +100,9 @@ public class ItemDrop : MonoBehaviour
         }
 
         else
-        {
-            
+        {          
               remove = false;
-              wasDropped = true;
-            
+              wasDropped = true;          
         }
 
 
