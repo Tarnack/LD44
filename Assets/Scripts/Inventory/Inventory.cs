@@ -155,4 +155,18 @@ public class Inventory : MonoBehaviour
         }
         return added;
     }
+
+    public void RemoveCurrency(CurrencySO so)
+    {
+        bool removed = false;
+        foreach (GameObject goModule in dictionary.Keys)
+        {
+            if (goModule.GetComponent<WalletInfos>().visible && dictionary[goModule].Contains(so) && !removed)
+            {
+
+                Remove(so, goModule);
+                removed = true; 
+            }
+        }
+    }
 }
