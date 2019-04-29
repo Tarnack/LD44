@@ -29,9 +29,12 @@ public class InventorySlot : MonoBehaviour
         icon.enabled = true;
         //removeButton.interactable = true;
         if (temporary != null) Destroy(temporary);
-        temporary = GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(currency.id, GetComponent<Transform>().position);
 
+
+        temporary = GameObject.FindGameObjectWithTag("Parent").GetComponent<ItemCreation>().ItemGeneration(GetComponent<Transform>().position, currency.model, currency.taille);
         temporary.GetComponent<ItemSlotOrigin>().lastModule = (GameObject)GetComponentInParent<InventoryUI>().moduleActifs[invUI.Index(this)];
+        temporary.GetComponent<ItemDrop>().currency = currency;
+      
     }
 
     // Clear the slot
