@@ -1905,6 +1905,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 660174cc08a00134c8b08a980842196b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 660174cc08a00134c8b08a980842196b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 660174cc08a00134c8b08a980842196b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660174cc08a00134c8b08a980842196b, type: 3}
 --- !u!1 &839871404
@@ -2302,6 +2317,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709663, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.94770336
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709663, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.05397749
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709663, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3773811
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709663, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.011810541
+      objectReference: {fileID: 0}
     - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
       propertyPath: currency
@@ -2383,7 +2418,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 5.2580596e-13, z: 0, w: 9.0091606e-13}
+  m_BoundingSphereOverride: {x: 0, y: 11552.906, z: 1e-45, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4031,6 +4066,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 09e66137284c299439d9685a4cba44a5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 09e66137284c299439d9685a4cba44a5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 09e66137284c299439d9685a4cba44a5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09e66137284c299439d9685a4cba44a5, type: 3}

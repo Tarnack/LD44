@@ -12,7 +12,8 @@ public class DisplayUI : MonoBehaviour
     public bool displayInfo;
     public InventoryUI invUI;
     private int index;
- 
+    private WalletModuleSO walletModule;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class DisplayUI : MonoBehaviour
         invUI = GameObject.Find("Canvas").GetComponent<InventoryUI>();
         myText.color = Color.clear;
         index = 0;
+        walletModule = GetComponent<WalletInfos>().so;
         
     }
 
@@ -32,15 +34,23 @@ public class DisplayUI : MonoBehaviour
         {
             Cursor.visible = false;
         }
+        if(walletModule.locked)
+        {
+            GetComponentsInChildren<SpriteRenderer>()[1].enabled = true;
+        }
+        else
+        {
+            GetComponentsInChildren<SpriteRenderer>()[1].enabled = false;
+        }
     }
 
     private void OnMouseDown()
     {
 
-        if (GetComponentInChildren<SpriteRenderer>().enabled == true)
+        if (GetComponentsInChildren<SpriteRenderer>()[0].enabled == true)
             return;
-        
-        GetComponentInChildren<SpriteRenderer>().enabled = true;
+
+        GetComponentsInChildren<SpriteRenderer>()[0].enabled = true;
         index = 3;
         
 

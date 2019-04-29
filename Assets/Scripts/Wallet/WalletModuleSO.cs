@@ -10,6 +10,7 @@ public class WalletModuleSO : ScriptableObject
     public int capacityMax;
     public GameObject prefab;
     public CurrencySO[] content;
+    public bool locked;
 
     public enum CurrencyType
     {
