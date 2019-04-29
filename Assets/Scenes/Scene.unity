@@ -640,6 +640,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e77a059b0e927644289325b7218bd9d6,
         type: 2}
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
 --- !u!1 &274097033
@@ -1501,6 +1506,7 @@ GameObject:
   - component: {fileID: 772834880}
   - component: {fileID: 772834879}
   - component: {fileID: 772834878}
+  - component: {fileID: 772834883}
   - component: {fileID: 772834877}
   - component: {fileID: 772834882}
   m_Layer: 0
@@ -1683,6 +1689,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &772834883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772834876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed60c196384bb0448c5fa7752816af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listEvent:
+  - {fileID: 11400000, guid: fdae9e6db1b02ff48bf759c43359d458, type: 2}
+  - {fileID: 11400000, guid: 2ec20028819b5174b8c0fa9d11ed3d08, type: 2}
+  - {fileID: 11400000, guid: 09b58318413924244b647d0ee92eee32, type: 2}
+  - {fileID: 11400000, guid: c51e2c42aca426c4cbe725ee4398a455, type: 2}
+  - {fileID: 11400000, guid: f1584cc50d947ea439be948027605e97, type: 2}
+  - {fileID: 11400000, guid: 0c30d59389f98ef4689dfdd59bfa2e51, type: 2}
 --- !u!1001 &793152118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1756,6 +1781,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5f5a47891a7d7134caacef71b0cd35ac,
         type: 2}
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
 --- !u!1001 &812802662
@@ -2239,6 +2269,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: currency
+      value: 
+      objectReference: {fileID: 11400000, guid: 55580edb00547914faabe1d4e6450224,
+        type: 2}
     - target: {fileID: 8342943381933709663, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
       propertyPath: m_Size.x
@@ -2259,12 +2295,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.011810541
       objectReference: {fileID: 0}
-    - target: {fileID: 8342943381933709660, guid: 1e50d1a5762d4a048a983d8559861622,
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
         type: 3}
-      propertyPath: currency
-      value: 
-      objectReference: {fileID: 11400000, guid: 55580edb00547914faabe1d4e6450224,
-        type: 2}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
 --- !u!1 &1026661695
@@ -4807,5 +4842,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f19567ad47236d840b51b72e28cbb545,
         type: 2}
+    - target: {fileID: 8342943381933709661, guid: 1e50d1a5762d4a048a983d8559861622,
+        type: 3}
+      propertyPath: isSelected
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e50d1a5762d4a048a983d8559861622, type: 3}
