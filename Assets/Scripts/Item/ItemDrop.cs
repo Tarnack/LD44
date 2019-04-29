@@ -57,13 +57,14 @@ public class ItemDrop : MonoBehaviour
 
         if (i ==1)
         {
-
+      
 
             if (other.tag == "Inventory")
             {
 
                 if (GetComponent<ItemSlotOrigin>().lastModule != (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0])
                     remove = Inventory.instance.Add(currency, (GameObject)GameObject.FindGameObjectWithTag("InventoryUI").GetComponent<InventoryUI>().moduleActifs[0]);
+                //if(!remove)
                 else
                     remove = false;
                 wasDropped = true;

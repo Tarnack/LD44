@@ -11,6 +11,8 @@ TagManager:
   - InventoryUI
   - Inventory2
   - Text
+  - EventDesc
+  - Currency
   layers:
   - Default
   - TransparentFX

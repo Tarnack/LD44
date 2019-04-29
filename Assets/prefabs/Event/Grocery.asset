@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Grocery
   m_EditorClassIdentifier: 
   eventName: Grocery
-  description: 
-  environnement: {fileID: 0}
+  description: blabla
+  environnement: {fileID: 21300000, guid: 9853549877e959f49a1a91259b962c82, type: 3}
   cost: 10
   frustBaisse: 20
   frustAugment: 30
-  soundTrack: {fileID: 0}
+  soundTrack: {fileID: 8300000, guid: bbbd1ce549cf1294d9a166f22fdb2c94, type: 3}
