@@ -61,7 +61,7 @@ public class EventGestionnaire : MonoBehaviour
              
     }
 
-    private void FinEvent()
+    public void FinEvent()
     {
         try
         {
@@ -83,7 +83,7 @@ public class EventGestionnaire : MonoBehaviour
 
                 }
             }
-            if (1 - frustration.value <= newEvent.frustBaisse / 100)
+            if (1 - frustration.value <= newEvent.frustAugment / 100)
             {
                 List<WalletInfos> modules = new List<WalletInfos>();
                 //pete un cable
