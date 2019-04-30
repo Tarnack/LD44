@@ -18,15 +18,19 @@ public class EventGestionnaire : MonoBehaviour
     private EventSO newEvent;
     public int eventPassed;
     public Text gameOverScore;
-   
+    public Canvas gameOverCanvas;
 
+    private void Awake()
+    {
+
+        gameObject.AddComponent<AudioSource>();
+        desc = GameObject.FindGameObjectWithTag("EventDesc").GetComponent<Text>();
+        StartNewEvent();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.AddComponent<AudioSource>();
-        desc = GameObject.FindGameObjectWithTag("EventDesc").GetComponent<Text>();
-   
     
 
     }
@@ -83,7 +87,10 @@ public class EventGestionnaire : MonoBehaviour
 
                 }
             }
-            if (1 - frustration.value <= newEvent.frustBaisse / 100)
+
+
+
+            if (1 - frustration.value <= newEvent.frustAugment / 100)
             {
                 List<WalletInfos> modules = new List<WalletInfos>();
                 //pete un cable
@@ -96,7 +103,10 @@ public class EventGestionnaire : MonoBehaviour
                 }
 
                 int i = Random.Range(0, modules.Count);
-                FindObjectsOfType<WalletInfos>()[i].visible = true;
+                modules[i].visible = true;
+                if (modules.Count == 1)
+                    gameOverCanvas.enabled = true;
+
 
                 frustration.value = 0;
             }
@@ -106,7 +116,7 @@ public class EventGestionnaire : MonoBehaviour
             }
 
         }
-        catch
+        catch(System.Exception e)
         {
             if (frustration.value > newEvent.frustBaisse / 100)
                 frustration.value -= newEvent.frustBaisse / 100;
