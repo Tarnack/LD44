@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: Supermarket
   description: Nothing left in the clupboard. Time to go shopping
-  environnement: {fileID: 0}
+  environnement: {fileID: 21300000, guid: 3205e279508ac8b429e37ad4d18385d6, type: 3}
   cost: 50
   frustBaisse: 60
   frustAugment: 60
