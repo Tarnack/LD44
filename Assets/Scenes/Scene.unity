@@ -262,6 +262,7 @@ MonoBehaviour:
   frustration: {fileID: 1722294156}
   sliderTimer: {fileID: 1469044201}
   background: {fileID: 0}
+  cling: {fileID: 0}
   eventPassed: 0
   gameOverScore: {fileID: 0}
 --- !u!114 &40212498
@@ -2263,6 +2264,7 @@ MonoBehaviour:
   frustration: {fileID: 1722294156}
   sliderTimer: {fileID: 1469044201}
   background: {fileID: 479223448}
+  cling: {fileID: 0}
   eventPassed: 0
   gameOverScore: {fileID: 1134525739}
 --- !u!1 &799158582
