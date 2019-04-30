@@ -87,11 +87,25 @@ public class EventGestionnaire : MonoBehaviour
 
                 }
             }
+            if (frustration.value > newEvent.frustBaisse / 100)
+                frustration.value -= newEvent.frustBaisse / 100;
+            else
+            {
+                frustration.value = 0;
+            }
+
+
+
+        }
+        catch(System.Exception e)
+        {
+            
 
             if (1 - frustration.value <= newEvent.frustAugment / 100)
             {
                 List<WalletInfos> modules = new List<WalletInfos>();
                 //pete un cable
+                if(FindObjectsOfType<WalletInfos>() != null)
                 foreach (WalletInfos mod in FindObjectsOfType<WalletInfos>())
                 {
                     if (!mod.GetComponent<WalletInfos>().visible)
@@ -111,16 +125,6 @@ public class EventGestionnaire : MonoBehaviour
             else
             {
                 frustration.value += newEvent.frustAugment / 100;
-            }
-
-        }
-        catch(System.Exception e)
-        {
-            if (frustration.value > newEvent.frustBaisse / 100)
-                frustration.value -= newEvent.frustBaisse / 100;
-            else
-            {
-                frustration.value = 0;
             }
 
             gameObject.GetComponent<AudioSource>().clip = cling;
